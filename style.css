@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.parisienne-regular {
+  font-family: "Parisienne", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* <uniquifier> Use a unique and descriptive class name
+    <weight>: Use a value from 200 to 700 */
+
+.oswald-400 {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.oswald-600 {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+:root {
+  --mix-nuts-color: #bb5f39;
+  --stay-fit-color: #8495e7;
+  --peacho-color: #d49d28;
+  --peanut-butter-color: #62202d;
+  --pecan-butter-color: #6fbd5f;
+  --cashew-butter-color: #c65baa;
+  --almond-butter-color: ##2b6cbf;
+  --bg-color: #ffff;
+  --footer-bg-color: #13252b;
+  --primary-text-color: #110f11;
+  --secondary-text-color: #fdf9fd;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100%;
+  padding-top: 2rem;
+  background-color: var(--bg-color);
+  color: var(--primary-text-color);
+  scroll-behavior: smooth;
+}
+
+.header {
+}
+
+/* .phoneViewNavbar {
+  position: fixed;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-text-color);
+  z-index: 100;
+} */
+
+.phoneViewNavbar,
+.desktopViewNavbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  padding: 0.5rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-text-color);
+  z-index: 100;
+}
+
+.shoppingCartDiv i {
+  color: var(--secondary-text-color);
+  font-size: large;
+}
+
+.logoDiv {
+  width: 15%;
+  text-align: center;
+}
+
+.logo {
+  width: 100%;
+  border-radius: 50%;
+}
+
+#navbar,
+#navbar a {
+  display: none;
+  transition: 0.3s ease;
+}
+
+#closeIcon {
+  display: none;
+}
+
+#menuIcon,
+#closeIcon {
+  color: var(--bg-color);
+  font-size: 1.5rem;
+}
+
+.active #closeIcon {
+  display: block;
+}
+
+.active #menuIcon {
+  display: none;
+}
+
+.active ~ #navbar a:hover,
+#navbar a:hover {
+  color: var(--footer-bg-color);
+}
+
+.active ~ #navbar {
+  position: absolute;
+  display: block;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  height: 16.7rem;
+  background-color: var(--primary-text-color);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.active ~ #overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#navbar a {
+  /* display: block; */
+  font-size: 1.1rem;
+  margin: 1.5rem 0;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  transform: translateY(-10px);
+  transition: 0.3s ease;
+}
+
+#navbar a {
+  display: none;
+}
+
+.active ~ #navbar a {
+  display: block;
+  font-size: 1.1rem;
+  margin: 1.5rem 0;
+  text-align: center;
+  text-decoration: none;
+  color: var(--bg-color);
+  transform: translateY(-10px);
+  transition: 0.3s ease;
+}
+
+.loginDiv {
+  color: var(--secondary-text-color);
+  margin-right: 1.2rem;
+}
+
+#desktopView {
+  display: none;
+}
+
+#desktopViewNavbar a {
+  color: var(--secondary-text-color);
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.headerIconsDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* marquee styling */
+.marqueeDiv {
+  background-color: grey;
+  height: 2rem;
+  overflow: hidden;
+  /* white-space: nowrap; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marquee {
+  box-sizing: border-box;
+  color: var(--secondary-text-color);
+  animation: sliding 6s linear infinite;
+}
+
+@keyframes sliding {
+  0% {
+    margin-top: -2rem;
+  }
+  40% {
+    margin-top: -2rem;
+  }
+  45% {
+    margin-top: 1.5rem;
+  }
+  75% {
+    margin-top: 1.5rem;
+  }
+  80% {
+    margin-top: -2rem;
+  }
+  100% {
+    margin-top: -2rem;
+  }
+}
+
+@media screen and (min-width: 469px) {
+  .logoDiv {
+    width: 10%;
+  }
+}
+
+@media screen and (min-width: 569px) {
+  .logoDiv {
+    width: 9%;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  #phoneView {
+    display: none;
+  }
+
+  #desktopView {
+    display: block;
+  }
+}
