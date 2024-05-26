@@ -13,6 +13,17 @@
     <title>Peanut Butter</title>
   </head>
   <body class="oswald-400">
+    <!-- loader -->
+    <div class="loading-spinner">
+      <div class="loading-spinner-inner">
+        <div class="loading-spinner-circle"></div>
+        <div class="loading-spinner-circle"></div>
+        <div class="loading-spinner-circle"></div>
+        <div class="loading-spinner-circle"></div>
+        <div class="loading-spinner-circle"></div>
+      </div>
+    </div>
+
     <div class="marqueeDiv" id="marquee">
       <div class="marquee">
         <div>Delivery all over Lebanon</div>
@@ -87,20 +98,43 @@
       </div>
     </div>
     <section class="productDetailsSec">
-      <div class="productImg">
-        <img src="assets/peanut.png" alt="Peanut Butter" />
-      </div>
+      <h1>product details</h1>
       <div class="productDetailsDiv">
-        <h3 class="productName">Peanut Butter</h3>
-        <span class="productPrice">3.5$</span>
-        <div class="productQuantityDiv">
-          <label for="productQuantity">Quantity</label>
-          <div class="productQuantityWrapper">
-            <span class="decreaseQuantity">-</span>
-            <span class="quantityNbr">1</span>
-            <span class="increaseQuantity">+</span>
+        <div class="productImg">
+          <img src="" alt="Peanut Butter" />
+        </div>
+        <div class="productDetailsContent">
+          <h3 class="productName"></h3>
+          <span class="productPrice"></span>
+          <div class="productQuantityDiv">
+            <label for="productQuantity">Quantity</label>
+            <div class="productQuantityWrapper">
+              <span class="decreaseQuantity"><i class="fa-solid fa-minus"></i></span>
+              <span class="quantityNbr" id="productQuantity">1</span>
+              <span class="increaseQuantity"><i class="fa-solid fa-plus"></i></span>
+            </div>
+            <div class="subtotalDiv">
+              <span>Subtotal:</span>
+              <span class="subtotal"></span>
+            </div>
+          </div>
+          <div class="productDetailsBtnDiv">
+            <button class="pdAddToCartBtn">add to cart</button>
+            <button class="checkoutBtn">checkout</button>
+          </div>
+          <div class="accordion">
+            <div class="productDescription"></div>
+            <div class="productIngredients"></div>
+            <div class="productBenefits"></div>
           </div>
         </div>
+      </div>
+      <div class="similarProductsDiv">
+        <div class="similarProductsHeader">
+          <h3 class="similarProductsTitle">Similar product</h3>
+          <a href="products.html">see all</a>
+        </div>
+        <div class="similarProductsList"></div>
       </div>
     </section>
     <!-- footer section -->
@@ -118,6 +152,6 @@
       </div>
     </footer>
     <script src="https://kit.fontawesome.com/e84b759868.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="productDetails.js"></script>
   </body>
 </html>

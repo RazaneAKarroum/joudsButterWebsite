@@ -45,7 +45,7 @@
 html,
 body {
   position: relative;
-  min-height: 200vh;
+  min-height: 150vh;
   width: 100%;
   /* padding-top: 2rem; */
   background-color: var(--bg-color);
@@ -53,6 +53,63 @@ body {
   scroll-behavior: smooth;
 }
 
+/* start loader styling */
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8em;
+}
+
+.loading-spinner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-spinner-circle {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: #db9334;
+  margin: 0 5px;
+  animation: loading-spinner 1s ease-in-out infinite;
+}
+
+.loading-spinner-circle:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-spinner-circle:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.loading-spinner-circle:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.loading-spinner-circle:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+@keyframes loading-spinner {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  20% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/*  end loader styling */
 #home {
 }
 
@@ -183,6 +240,10 @@ body {
   color: var(--bg-color);
   transform: translateY(-10px);
   transition: 0.3s ease;
+}
+
+a.activeLink {
+  color: var(--butter-color);
 }
 
 .loginDiv {
@@ -450,7 +511,8 @@ body {
 }
 
 .bestSellerProductsDiv,
-.allProductsDiv {
+.allProductsDiv,
+.similarProductsList {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -803,14 +865,113 @@ body {
 }
 
 /* product details page */
-.productQuantityWrapper {
-  height: 2rem;
-  width: 4rem;
+
+.productDetailsSec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.productDetailsDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.productImg {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid var(--butter-color);
-  border-radius: 12px;
+  padding: 2rem;
+}
+
+.productImg img {
+  width: 50%;
+}
+
+.productDetailsContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+}
+
+.productName {
+  text-transform: capitalize;
+  font-size: larger;
+}
+
+.productPrice {
+  font-size: 1rem;
+  font-weight: 500;
+  word-spacing: 1;
+}
+
+.productQuantityWrapper {
+  height: 2rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--primary-text-color);
+  border-radius: 5px;
+}
+
+.productQuantityWrapper span {
+  width: 100%;
+  text-align: center;
+}
+
+.decreaseQuantity,
+.increaseQuantity {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.productDetailsBtnDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkoutBtn,
+.pdAddToCartBtn {
+  width: 48%;
+  background-color: var(--primary-text-color);
+  color: var(--secondary-text-color);
+  border: none;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 2px;
+  padding: 0.5rem 1.5rem;
+}
+
+.checkoutBtn:hover {
+  background-color: #000000b9;
+}
+
+.similarProductsDiv {
+  width: 100%;
+  padding: 1rem;
+}
+
+.similarProductsHeader {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
 }
 
 /* responsive */
@@ -844,7 +1005,8 @@ body {
   margin-bottom: 1rem;
   padding: 1rem; */
   }
-  .allProductsDiv {
+  .allProductsDiv,
+  .similarProductsList {
     flex-direction: row;
     justify-content: flex-start;
   }
@@ -926,6 +1088,35 @@ body {
 
   .featuresCard i {
     font-size: 2rem;
+  }
+
+  .productDetailsSec {
+    padding: 2rem 4rem;
+  }
+
+  .productDetailsDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .productImg {
+    width: 50%;
+    padding: 2rem;
+  }
+
+  .productImg img {
+    width: 50%;
+  }
+
+  .productDetailsContent {
+    width: 50%;
+  }
+
+  .similarProductsDiv {
+    width: 80%;
+    padding: 1rem;
   }
 }
 
