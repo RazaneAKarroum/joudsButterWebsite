@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": " Peanut Butter",
+    "weight1": 200,
+    "price1": 3.5,
+    "weight2": 300,
+    "price2": 4.5,
+    "image": "assets/peanut.png",
+    "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
+  },
+  {
+    "id": 2,
+    "name": " peanut peacho chocolate",
+    "weight1": 200,
+    "price1": 3.5,
+    "weight2": 300,
+    "price2": 4.5,
+    "image": "assets/peacho.png",
+    "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
+  },
+  {
+    "id": 3,
+    "name": " almond butter",
+    "weight1": 200,
+    "price1": 3.5,
+    "weight2": 300,
+    "price2": 4.5,
+    "image": "assets/almond.png",
+    "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
+  },
+  {
+    "id": 4,
+    "name": " mix nuts",
+    "weight1": 200,
+    "price1": 3.5,
+    "weight2": 300,
+    "price2": 4.5,
+    "image": "assets/mixNuts.png",
+    "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
+  },
+  {
+    "id": 5,
+    "name": " stay Fit",
+    "weight1": 200,
+    "price1": 3.5,
+    "weight2": 300,
+    "price2": 4.5,
+    "image": "assets/stayFit.png",
+    "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
+  },
+  {
+    "id": 6,
+    "name": " pecan butter",
+    "weight1": 200,
+    "price1": 3.5,
+    "weight2": 300,
+    "price2": 4.5,
+    "image": "assets/pecan.png",
+    "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
+  },
+  {
+    "id": 7,
+    "name": " cashew butter",
+    "weight1": 200,
+    "price1": 3.5,
+    "weight2": 300,
+    "price2": 4.5,
+    "image": "assets/cashew.png",
+    "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
+  }
+]

@@ -13,141 +13,308 @@
     <title>Joud's Butter</title>
   </head>
   <body class="oswald-400">
-    <!-- main section -->
-    <section id="home">
-      <div class="marqueeDiv">
-        <div class="marquee">
-          <div>Delivery all over Lebanon</div>
-          <div>Pay Cash on Delivery</div>
-        </div>
+    <div class="marqueeDiv" id="marquee">
+      <div class="marquee">
+        <div>Delivery all over Lebanon</div>
+        <div>Pay Cash on Delivery</div>
       </div>
-
-      <header class="header">
-        <div id="phoneView">
-          <nav class="phoneViewNavbar">
-            <div class="shoppingCartDiv">
+    </div>
+    <header class="header">
+      <div id="phoneView">
+        <nav class="phoneViewNavbar">
+          <div class="shoppingCartDiv">
+            <a href="#" class="shoppingCartBtn">
               <i class="fa-solid fa-cart-shopping"></i>
-              <span></span>
-            </div>
-            <div class="logoDiv">
-              <a href="index.html" class="logoLink">
-                <img src="assets/joudButterLogo.jpeg" alt="Joud's Butter Logo" class="logo" />
-              </a>
-            </div>
-            <div id="togglerDiv">
-              <i class="fa-solid fa-bars" id="menuIcon"></i>
-              <i class="fa-solid fa-xmark" id="closeIcon"></i>
-            </div>
-            <nav id="navbar">
-              <a href="index.html#mainSection">Home</a>
-              <a href="index.html#ourServices">Our Products</a>
-              <a href="index.html#aboutUsSection">About Us</a>
-              <a href="index.html#contactUsSection">Contact Us</a>
-              <a href="index.html#contactUsSection">Log In</a>
-            </nav>
+            </a>
+            <span class="shoppingCartNbr"></span>
+          </div>
+          <div class="logoDiv">
+            <a href="index.html" class="logoLink">
+              <img src="assets/joudButterLogo.jpeg" alt="Joud's Butter Logo" class="logo" />
+            </a>
+          </div>
+          <div id="togglerDiv">
+            <i class="fa-solid fa-bars" id="menuIcon"></i>
+            <i class="fa-solid fa-xmark" id="closeIcon"></i>
+          </div>
+          <nav id="navbar">
+            <a href="index.html#mainSection">Home</a>
+            <a href="products.html#allProductsSec">Our Products</a>
+            <a href="index.html#aboutUsSection">About Us</a>
+            <a href="index.html#contactUsSection">Contact Us</a>
+            <a href="index.html#contactUsSection">Store Locator</a>
+            <a href="index.html#contactUsSection">Log In</a>
           </nav>
-        </div>
-        <div id="desktopView">
-          <nav class="desktopViewNavbar">
-            <div class="logoDiv">
-              <a href="index.html" class="logoLink">
-                <img src="assets/joudButterLogo.jpeg" alt="Joud's Butter Logo" class="logo" />
-              </a>
-            </div>
-            <nav id="desktopViewNavbar">
-              <a href="index.html#mainSection">Home</a>
-              <a href="index.html#ourServices">Our Products</a>
-              <a href="index.html#aboutUsSection">About Us</a>
-              <a href="index.html#contactUsSection">Contact Us</a>
-            </nav>
-            <div class="headerIconsDiv">
-              <div class="loginDiv">
+        </nav>
+      </div>
+      <div id="desktopView">
+        <nav class="desktopViewNavbar">
+          <div class="logoDiv">
+            <a href="index.html" class="logoLink">
+              <img src="assets/joudButterLogo.jpeg" alt="Joud's Butter Logo" class="logo" />
+            </a>
+          </div>
+          <nav id="desktopViewNavbar">
+            <a href="index.html#mainSection">Home</a>
+            <a href="products.html#allProductsSec">Our Products</a>
+            <a href="index.html#aboutUsSection">About Us</a>
+            <a href="index.html#contactUsSection">Contact Us</a>
+          </nav>
+          <div class="headerIconsDiv">
+            <div class="loginDiv">
+              <a href="#" class="loginBtn">
                 <i class="fa-regular fa-circle-user"></i>
                 <span>Log In</span>
-              </div>
-              <div class="shoppingCartDiv">
+              </a>
+            </div>
+            <div class="shoppingCartDiv">
+              <a href="#" class="shoppingCartBtn">
                 <i class="fa-solid fa-cart-shopping"></i>
-                <span></span>
+              </a>
+              <span class="shoppingCartNbr"></span>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- main section -->
+    <div class="floatingElementDiv">
+      <div class="floatingElement floatingTop">
+        <a href="#marquee"><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
+      <div class="floatingElement floatingWhatsapp">
+        <a href="https://wa.me/71315517" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <section class="mainSec">
+      <section id="home">
+        <!-- <div class="introDiv">
+          <div class="introHeaderDiv">
+            <h1 class="introHeader oswald-600">Behind every healthy product</h1>
+            <p class="introSubHeader parisienne-regular">high quality ingredients</p>
+          </div>
+          <div class="headerContentDiv">
+            <div class="introDescriptionDiv">
+              <p class="introDesc">
+                Missing out on sugary store-bought nut butters? We get it! That's why we offer delicious, healthy nut spreads made with minimal processing, right here for you. Packed with flavor and wholesome ingredients, our spreads are perfect for busy lifestyles or adding a nutritious twist to your cooking. From classic flavors to exciting combinations, explore our range and find your new go-to spread!
+              </p>
+              <button class="shopNowBtn">shop Now</button>
+            </div>
+            <div class="introProductImgDiv">
+              <div class="content"></div>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="introHeaderImgDiv">
+          <div class="imgContent"></div>
+        </div>
+      </section>
+      <section class="productsSec">
+        <h2 class="oswald-600 subtitle">best seller Products</h2>
+        <div class="productsDiv">
+          <div class="bestSellerProductsDiv">
+            <div class="productCard">
+              <img src="assets/peanut.png" />
+              <span>peanut butter</span>
+              <span>from 3.1$</span>
+              <button class="addToCartBtn">add to cart</button>
+            </div>
+            <div class="productCard">
+              <img src="assets/peacho.png" />
+              <span>peacho butter</span>
+              <span>from 3.7$</span>
+              <button class="addToCartBtn">add to cart</button>
+            </div>
+            <div class="productCard">
+              <img src="assets/almond.png" />
+              <span>almond butter</span>
+              <span>from 5.3$</span>
+              <button class="addToCartBtn">add to cart</button>
+            </div>
+          </div>
+          <div class="showAllBtnDiv">
+            <button class="showAllBtn">
+              See All Products
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div class="angle angle1"></div>
+
+      <section class="whyUsSec">
+        <h2 class="subtitle2">why our products</h2>
+        <div class="featuresDiv">
+          <div class="featuresCard card1">
+            <i class="fa-solid fa-dumbbell"></i>
+            <span>high in protein</span>
+          </div>
+          <div class="featuresCard card2">
+            <i class="fa-solid fa-leaf"></i>
+            <span>no added preservatives</span>
+          </div>
+          <div class="featuresCard card3">
+            <i class="fa-solid fa-medal"></i>
+            <span>high quality ingredients</span>
+          </div>
+          <div class="featuresCard card4">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <span>homemade with love</span>
+          </div>
+        </div>
+      </section>
+      <!-- customers feedback -->
+      <section class="feedbackSec">
+        <h2 class="subtitle">customers feedback</h2>
+        <div class="feedbackHeader">
+          <h3 class="oswald-600">Trusted by the kindest clients</h3>
+          <p class="parisienne-regular">Here's a glimpse into the heartfelt experiences of our incredible clients.</p>
+          <p class="parisienne-regular">Your trust fuels our passion.</p>
+        </div>
+        <div class="feedbackSlider">
+          <div class="feedbackSliderTrack">
+            <div class="feedbackSlide">
+              <div class="feedbackSlideContent">
+                <div class="customerImg">
+                  <img src="" alt="" />
+                </div>
+                <p class="customerName">Lucine Thebian</p>
+                <p class="customerFeedbackPar">
+                  <i class="fa-solid fa-quote-left"></i>
+                  Kteer taybeen habayt l ta3mee yaane perfect 👌 thankuu 😍😍❤❤
+                  <i class="fa-solid fa-quote-right"></i>
+                </p>
               </div>
             </div>
-          </nav>
-        </div>
-      </header>
-      <!-- <div class="introDiv">
-        <div class="introHeaderDiv">
-          <h1 class="introHeader oswald-600">Behind every healthy product</h1>
-          <p class="introSubHeader parisienne-regular">high quality ingredients</p>
-        </div>
-        <div class="headerContentDiv">
-          <div class="introDescriptionDiv">
-            <p class="introDesc">
-              We offer delicious, healthy nut spreads. From classic flavors to exciting combinations, explore our range
-              and find your new go-to spread!
-            </p>
-            <button class="shopNowBtn">shop Now</button>
+            <div class="feedbackSlide">
+              <div class="feedbackSlideContent">
+                <div class="customerImg">
+                  <img src="assets/suzanehalawaniProfile.jpg" alt="" />
+                </div>
+                <p class="customerName">suzane halawani</p>
+                <p class="customerFeedbackPar">Thank you @joud_butter for your amazing job ☕</p>
+              </div>
+            </div>
+            <div class="feedbackSlide">
+              <div class="feedbackSlideContent">
+                <div class="customerImg">
+                  <img src="" alt="" />
+                </div>
+                <p class="customerName">hanadi karroum</p>
+                <p class="customerFeedbackPar">
+                  highest quality ever 100% natural Made in Lebanon
+                  <br />
+                  You should definetly try it🤍
+                  <br />
+                  Thank you for the best peanut butter out there!
+                </p>
+              </div>
+            </div>
+            <div class="feedbackSlide">
+              <div class="feedbackSlideContent">
+                <div class="customerImg">
+                  <img src="" alt="" />
+                </div>
+                <p class="customerName"></p>
+                <p class="customerFeedbackPar"></p>
+              </div>
+            </div>
+            <div class="feedbackSlide">
+              <div class="feedbackSlideContent">
+                <div class="customerImg">
+                  <img src="" alt="" />
+                </div>
+                <p class="customerName"></p>
+                <p class="customerFeedbackPar"></p>
+              </div>
+            </div>
+            <!-- duplicate -->
+            <div class="feedbackSlide">
+              <div class="feedbackSlideContent">
+                <div class="customerImg">
+                  <img src="" alt="" />
+                </div>
+                <p class="customerName">Lucine Thebian</p>
+                <p class="customerFeedbackPar">Kteer taybeen habayt l ta3mee yaane perfect 👌 thankuu 😍😍❤❤</p>
+              </div>
+            </div>
+            <div class="feedbackSlide">
+              <div class="feedbackSlideContent">
+                <div class="customerImg">
+                  <img src="" alt="" />
+                </div>
+                <p class="customerName">suzane halawani</p>
+                <p class="customerFeedbackPar">Thank you @joud_butter for your amazing job ☕</p>
+              </div>
+            </div>
+            <div class="feedbackSlide">
+              <div class="feedbackSlideContent">
+                <div class="customerImg">
+                  <img src="" alt="" />
+                </div>
+                <p class="customerName">hanadi karroum</p>
+                <p class="customerFeedbackPar">
+                  highest quality ever 100% natural Made in Lebanon
+                  <br />
+                  You should definetly try it🤍
+                  <br />
+                  Thank you for the best peanut butter out there!
+                </p>
+              </div>
+            </div>
+            <div class="feedbackSlide">
+              <div class="feedbackSlideContent">
+                <div class="customerImg">
+                  <img src="" alt="" />
+                </div>
+                <p class="customerName"></p>
+                <p class="customerFeedbackPar"></p>
+              </div>
+            </div>
+            <div class="feedbackSlide">
+              <div class="feedbackSlideContent">
+                <div class="customerImg">
+                  <img src="" alt="" />
+                </div>
+                <p class="customerName"></p>
+                <p class="customerFeedbackPar"></p>
+              </div>
+            </div>
           </div>
-          <div class="introProductImgDiv">
-            <div class="content"></div>
-          </div>
         </div>
-      </div> -->
-
-      <div class="introHeaderImgDiv">
-        <div class="imgContent"></div>
-      </div>
+      </section>
+      <div class="angle angle2"></div>
+      <section class="ourStorySec">
+        <h2 class="subtitle2">our story</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim aperiam sit praesentium aspernatur ratione illo
+          saepe ab tempora in, culpa harum aliquam, consectetur explicabo a unde neque dolores incidunt eum accusamus
+          alias voluptatibus tempore quaerat sequi. Incidunt, tenetur! Sequi rem sapiente voluptates tempore commodi
+          asperiores reprehenderit aspernatur sunt placeat quis!
+        </p>
+        <div class="btnDiv">
+          <button class="btn2">read more</button>
+        </div>
+      </section>
+      <section class="instaFeedGallerySec">
+        <h2 class="subtitle">our gallery</h2>
+      </section>
     </section>
-    <section class="productsSec">
-      <h2 class="oswald-600">best seller Products</h2>
-      <div class="productsDiv">
-        <div class="bestSellerProductsDiv">
-          <div class="productCard">
-            <img src="assets/peanut.png" />
-            <span>peanut butter</span>
-            <span>from 3.1$</span>
-            <button class="addToCartBtn">add to cart</button>
-          </div>
-          <div class="productCard">
-            <img src="assets/peacho.png" />
-            <span>peacho butter</span>
-            <span>from 3.7$</span>
-            <button class="addToCartBtn">add to cart</button>
-          </div>
-          <div class="productCard">
-            <img src="assets/almond.png" />
-            <span>almond butter</span>
-            <span>from 5.3$</span>
-            <button class="addToCartBtn">add to cart</button>
-          </div>
-        </div>
-        <div class="showAllBtnDiv">
-          <button class="showAllBtn">
-            See All Products
-            <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
+    <footer class="footer">
+      <div class="footerSocialIcons">
+        <a href="https://www.instagram.com/jouds_butter/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/71315517" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
       </div>
-    </section>
-    <section class="whyUsSec">
-      <h2>why our products</h2>
-      <div class="featuresDiv">
-        <div class="featuresCard">
-          <i class="fa-solid fa-dumbbell"></i>
-          <span>high in protein</span>
-        </div>
-        <div class="featuresCard">
-          <i class="fa-solid fa-leaf"></i>
-          <span>no added preservatives</span>
-        </div>
-        <div class="featuresCard">
-          <i class="fa-solid fa-medal"></i>
-          <span>high quality ingredients</span>
-        </div>
-        <div class="featuresCard">
-          <i class="fa-solid fa-hand-holding-heart"></i>
-          <span>homemade with love</span>
-        </div>
+      <div class="footerCopyright">
+        <span>
+          Powered by
+          <i class="fa-regular fa-copyright"></i>
+          <a href="index.html" id="heavenlyCodeWebLink">Heavenly code</a>
+        </span>
       </div>
-    </section>
+    </footer>
 
     <script src="https://kit.fontawesome.com/e84b759868.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="main.js"></script>

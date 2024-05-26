@@ -1,0 +1,123 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- icon links -->
+    <link rel="icon" href="assets/joudButterLogo.jpeg" type="image/x-icon" />
+    <!-- Font links-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Peanut Butter</title>
+  </head>
+  <body class="oswald-400">
+    <div class="marqueeDiv" id="marquee">
+      <div class="marquee">
+        <div>Delivery all over Lebanon</div>
+        <div>Pay Cash on Delivery</div>
+      </div>
+    </div>
+    <header class="header">
+      <div id="phoneView">
+        <nav class="phoneViewNavbar">
+          <div class="shoppingCartDiv">
+            <a href="#" class="shoppingCartBtn">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+            <span class="shoppingCartNbr"></span>
+          </div>
+          <div class="logoDiv">
+            <a href="index.html" class="logoLink">
+              <img src="assets/joudButterLogo.jpeg" alt="Joud's Butter Logo" class="logo" />
+            </a>
+          </div>
+          <div id="togglerDiv">
+            <i class="fa-solid fa-bars" id="menuIcon"></i>
+            <i class="fa-solid fa-xmark" id="closeIcon"></i>
+          </div>
+          <nav id="navbar">
+            <a href="index.html#mainSection">Home</a>
+            <a href="products.html#allProductsSec">Our Products</a>
+            <a href="index.html#aboutUsSection">About Us</a>
+            <a href="index.html#contactUsSection">Contact Us</a>
+            <a href="index.html#contactUsSection">Store Locator</a>
+            <a href="index.html#contactUsSection">Log In</a>
+          </nav>
+        </nav>
+      </div>
+      <div id="desktopView">
+        <nav class="desktopViewNavbar">
+          <div class="logoDiv">
+            <a href="index.html" class="logoLink">
+              <img src="assets/joudButterLogo.jpeg" alt="Joud's Butter Logo" class="logo" />
+            </a>
+          </div>
+          <nav id="desktopViewNavbar">
+            <a href="index.html#mainSection">Home</a>
+            <a href="products.html#allProductsSec">Our Products</a>
+            <a href="index.html#aboutUsSection">About Us</a>
+            <a href="index.html#contactUsSection">Contact Us</a>
+          </nav>
+          <div class="headerIconsDiv">
+            <div class="loginDiv">
+              <a href="#" class="loginBtn">
+                <i class="fa-regular fa-circle-user"></i>
+                <span>Log In</span>
+              </a>
+            </div>
+            <div class="shoppingCartDiv">
+              <a href="#" class="shoppingCartBtn">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
+              <span class="shoppingCartNbr"></span>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- main section -->
+    <div class="floatingElementDiv">
+      <div class="floatingElement floatingTop">
+        <a href="#marquee"><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
+      <div class="floatingElement floatingWhatsapp">
+        <a href="https://wa.me/71315517" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <section class="productDetailsSec">
+      <div class="productImg">
+        <img src="assets/peanut.png" alt="Peanut Butter" />
+      </div>
+      <div class="productDetailsDiv">
+        <h3 class="productName">Peanut Butter</h3>
+        <span class="productPrice">3.5$</span>
+        <div class="productQuantityDiv">
+          <label for="productQuantity">Quantity</label>
+          <div class="productQuantityWrapper">
+            <span class="decreaseQuantity">-</span>
+            <span class="quantityNbr">1</span>
+            <span class="increaseQuantity">+</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- footer section -->
+    <footer class="footer">
+      <div class="footerSocialIcons">
+        <a href="https://www.instagram.com/jouds_butter/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/71315517" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+      <div class="footerCopyright">
+        <span>
+          Powered by
+          <i class="fa-regular fa-copyright"></i>
+          <a href="index.html" id="heavenlyCodeWebLink">Heavenly code</a>
+        </span>
+      </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/e84b759868.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
