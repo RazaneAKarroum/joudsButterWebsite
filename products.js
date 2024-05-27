@@ -1,3 +1,11 @@
+// loader
+var loader = document.getElementById("loading-spinner");
+
+window.addEventListener("load", () => {
+  loader.style.display = "none";
+});
+// end loader
+
 let products = null;
 // get datas from file json
 fetch("products.json")
