@@ -12,10 +12,10 @@ fetch("products.json")
   .then((response) => response.json())
   .then((data) => {
     products = data;
-    addDataToHTML();
+    addDataToProducts();
   });
 
-function addDataToHTML() {
+function addDataToProducts() {
   // remove datas default from HTML
   let listProductHTML = document.querySelector(".allProductsDiv");
 
@@ -24,9 +24,10 @@ function addDataToHTML() {
     // if has data
     products.forEach((product) => {
       let newProduct = document.createElement("div");
-      newProduct.onclick = () => {
-        window.open(`/productDetails.html?id=${product.id}`);
-      };
+      // newProduct.onclick = () => {
+      //   window.open(`/productDetails.html?id=${product.id}`);
+      // };
+      newProduct.dataset.id = product.id;
       newProduct.classList.add("productCard");
       newProduct.innerHTML = `<img src="${product.image}" alt="">
                 <span>${product.name}</span>
