@@ -74,7 +74,8 @@ for (var i = 0; i < bestSellerProduct.length; i++) {
     if (!isAddToCart) {
       window.open(`/${e.target.id}`);
     } else {
-      addToCart(e.target.dataset.id);
+      let bestSellerId = e.target.dataset.id;
+      addToCart(bestSellerId, 1);
     }
   });
 }
@@ -99,23 +100,23 @@ function goToPage(link) {
 //   // }
 // }
 
-function addToCart(product_id) {
+function addToCart(product_id, itemQuantity) {
   // const addToCart = (product_id) => {
   let positionThisProductInCart = cart.findIndex((value) => value.product_id == product_id);
   if (cart.length <= 0) {
     cart = [
       {
         product_id: product_id,
-        quantity: 1,
+        quantity: itemQuantity,
       },
     ];
   } else if (positionThisProductInCart < 0) {
     cart.push({
       product_id: product_id,
-      quantity: 1,
+      quantity: itemQuantity,
     });
   } else {
-    cart[positionThisProductInCart].quantity = cart[positionThisProductInCart].quantity + 1;
+    cart[positionThisProductInCart].quantity = cart[positionThisProductInCart].quantity + itemQuantity;
   }
   addCartToHTML();
   addCartToMemory();
@@ -142,8 +143,10 @@ const addCartToHTML = () => {
       let positionProduct = products.findIndex((value) => value.id == item.product_id);
       let info = products[positionProduct];
       listCartHTML.appendChild(newItem);
-      totalItemPrice += Number(info.price1) * Number(item.quantity);
+      totalItemPrice += Number(info.price[0]) * Number(item.quantity);
+      totalItemPrice = Math.round(totalItemPrice * 100) / 100;
       subtotal += totalItemPrice;
+      subtotal = Math.round(subtotal * 100) / 100;
       console.log(`subtotal = ${subtotal}`);
       // console.log(info.price1);
       // console.log(`total price = ${Number(info.price1)} * ${Number(item.quantity)}`);

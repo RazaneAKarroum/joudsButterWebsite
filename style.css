@@ -933,6 +933,26 @@ a.activeLink {
   font-size: larger;
 }
 
+.productWeightDiv .weightTitle,
+.productQuantityDiv .quantityTitle {
+  display: inline-block;
+  margin-bottom: 0.7rem;
+  font-size: 1.1rem;
+}
+
+.productWeightlist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.productWeightlist .productWeight {
+  list-style-type: none;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
 .productPrice {
   font-size: 1rem;
   font-weight: 500;
@@ -945,7 +965,7 @@ a.activeLink {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid var(--primary-text-color);
+  border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 5px;
 }
 
