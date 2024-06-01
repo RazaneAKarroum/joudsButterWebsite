@@ -1,18 +1,20 @@
 const toggle = document.getElementById("togglerDiv");
 const navbar = document.getElementById("navbar");
+let bestSellerProduct = document.getElementsByClassName("productCard");
 // let iconCart = document.querySelector(".shoppingCartBtn");
 let closeCart = document.querySelector(".close");
 var iconCart = document.getElementsByClassName("shoppingCartBtn");
 const cartTab = document.getElementById("cartTab");
-let listProductHTML = document.querySelector(".allProductsDiv");
+// let listProductHTML = document.querySelector(".allProductsDiv");
 let listCartHTML = document.querySelector(".listCart");
 let cartNbr = document.getElementsByClassName("shoppingCartNbr");
-let subtotalSpan = document.querySelector(".subtotal");
+let subtotalSpan = document.querySelector(".cartSubtotal");
 let cart = [];
 // let products = [];
 let body = document.querySelector("body");
 
 console.log(iconCart);
+console.log(bestSellerProduct);
 
 // loader
 var loader = document.getElementById("loading-spinner");
@@ -21,6 +23,22 @@ window.addEventListener("load", () => {
   loader.style.display = "none";
 });
 // end loader
+
+// add to cart function from index.html page
+// function addToCart(addedProduct) {
+//   console.log(`added product is: ${addedProduct}`);
+//   let id_product = addedProduct.dataset.id;
+//   addToCart(id_product);
+// }
+// listProductHTML.addEventListener("click", (event) => {
+//   console.log(event);
+//   let positionClick = event.target;
+//   if (positionClick.classList.contains("addToCartBtn")) {
+//     let id_product = positionClick.parentElement.dataset.id;
+//     console.log(id_product);
+//     addToCart(id_product);
+//   }
+// });
 
 //open and close cart
 var iconCart = document.getElementsByClassName("shoppingCartBtn");
@@ -48,6 +66,19 @@ document.onclick = function (e) {
   }
 };
 
+for (var i = 0; i < bestSellerProduct.length; i++) {
+  var bestSellerProductClicked = bestSellerProduct[i];
+  bestSellerProductClicked.addEventListener("click", (e) => {
+    console.log(e);
+    let isAddToCart = e.target.classList.contains("addToCartBtn");
+    if (!isAddToCart) {
+      window.open(`/${e.target.id}`);
+    } else {
+      addToCart(e.target.dataset.id);
+    }
+  });
+}
+
 toggle.onclick = function () {
   toggle.classList.toggle("active");
   navbar.classList.toggle("active");
@@ -57,22 +88,19 @@ function goToPage(link) {
   window.open(link.value);
 }
 
-function goToLink(link) {
-  window.open(link.id);
-}
+// function goToLink(link) {
+//   console.log(link.children.tagName);
+//   // let isAddToCart = link.target.classList.contains("addToCartBtn");
+//   // console.log("check if addToCartBtn class exist: " + isAddToCart);
+//   // if (!isAddToCart) {
+//   //   window.open(`/productDetails.html?id=${product.id}`);
+//   // } else {
+//   //   window.open(link.id);
+//   // }
+// }
 
-// add to cart
-listProductHTML.addEventListener("click", (event) => {
-  console.log(event);
-  let positionClick = event.target;
-  if (positionClick.classList.contains("addToCartBtn")) {
-    let id_product = positionClick.parentElement.dataset.id;
-    console.log(id_product);
-    addToCart(id_product);
-  }
-});
-
-const addToCart = (product_id) => {
+function addToCart(product_id) {
+  // const addToCart = (product_id) => {
   let positionThisProductInCart = cart.findIndex((value) => value.product_id == product_id);
   if (cart.length <= 0) {
     cart = [
@@ -91,7 +119,7 @@ const addToCart = (product_id) => {
   }
   addCartToHTML();
   addCartToMemory();
-};
+}
 const addCartToMemory = () => {
   localStorage.setItem("cart", JSON.stringify(cart));
 };
@@ -116,6 +144,7 @@ const addCartToHTML = () => {
       listCartHTML.appendChild(newItem);
       totalItemPrice += Number(info.price1) * Number(item.quantity);
       subtotal += totalItemPrice;
+      console.log(`subtotal = ${subtotal}`);
       // console.log(info.price1);
       // console.log(`total price = ${Number(info.price1)} * ${Number(item.quantity)}`);
       newItem.innerHTML = `
@@ -133,7 +162,9 @@ const addCartToHTML = () => {
     });
   }
 
+  console.log(subtotalSpan);
   subtotalSpan.innerText = `$ ${subtotal}`;
+  console.log(`subtotalSpan = ${subtotalSpan.innerText}`);
 
   for (i = 0; i < cartNbr.length; i++) {
     cartNbr[i].innerText = totalQuantity;
@@ -178,12 +209,13 @@ const changeQuantityCart = (product_id, type) => {
 };
 
 const initApp = () => {
+  console.log("initApp is clicked");
   // get data product
   fetch("products.json")
     .then((response) => response.json())
     .then((data) => {
       products = data;
-      addDataToHTML();
+      //addDataToHTML();
 
       // get data cart from memory
       if (localStorage.getItem("cart")) {

@@ -1124,7 +1124,7 @@ body.showCart .main {
   font-weight: 600;
 }
 
-.subtotalDiv {
+.cartSubtotalDiv {
   display: flex;
   justify-content: end;
   align-items: center;

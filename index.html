@@ -37,7 +37,7 @@
               <div class="shoppingCartBtn">
                 <i class="fa-solid fa-cart-shopping"></i>
               </div>
-              <span class="shoppingCartNbr"></span>
+              <span class="shoppingCartNbr">0</span>
             </div>
             <div class="logoDiv">
               <a href="index.html" class="logoLink">
@@ -82,7 +82,7 @@
                 <div class="shoppingCartBtn">
                   <i class="fa-solid fa-cart-shopping"></i>
                 </div>
-                <span class="shoppingCartNbr"></span>
+                <span class="shoppingCartNbr">0</span>
               </div>
             </div>
           </nav>
@@ -125,23 +125,23 @@
           <h2 class="oswald-600 subtitle">best seller Products</h2>
           <div class="productsDiv">
             <div class="bestSellerProductsDiv">
-              <div class="productCard" onclick="goToLink(this)" id="productDetails.html?id=1">
+              <div class="productCard" id="productDetails.html?id=1">
                 <img src="assets/peanut.png" />
                 <span>peanut butter</span>
                 <span>from 3.1$</span>
-                <button class="addToCartBtn">add to cart</button>
+                <button class="addToCartBtn" data-id="1">add to cart</button>
               </div>
-              <div class="productCard" onclick="goToLink(this)" id="productDetails.html?id=2">
+              <div class="productCard" id="productDetails.html?id=2">
                 <img src="assets/peacho.png" />
                 <span>peacho butter</span>
                 <span>from 3.7$</span>
-                <button class="addToCartBtn">add to cart</button>
+                <button class="addToCartBtn" data-id="2">add to cart</button>
               </div>
-              <div class="productCard" onclick="goToLink(this)" id="productDetails.html?id=3">
+              <div class="productCard" id="productDetails.html?id=3">
                 <img src="assets/almond.png" />
                 <span>almond butter</span>
                 <span>from 5.3$</span>
-                <button class="addToCartBtn">add to cart</button>
+                <button class="addToCartBtn" data-id="3">add to cart</button>
               </div>
             </div>
             <div class="showAllBtnDiv">
@@ -335,9 +335,9 @@
         <h3>your Cart</h3>
       </div>
       <div class="listCart"></div>
-      <div class="subtotalDiv">
+      <div class="cartSubtotalDiv">
         <span>Subtotal:</span>
-        <span class="subtotal"></span>
+        <span class="cartSubtotal"></span>
       </div>
       <div class="cartFooter">
         <button class="viewCartBtn">view cart</button>
