@@ -2,64 +2,76 @@
   {
     "id": 1,
     "name": " Peanut Butter",
-    "weight": [300, 600],
-    "price": [3.1, 5.3],
     "image": "assets/peanut.png",
+    "price": 3.1,
     "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric.",
-    "color": "62202d"
+    "color": "62202d",
+    "children": [
+      { "weight": 300, "price": 3.1 },
+      { "weight": 600, "price": 5.3 }
+    ]
   },
   {
     "id": 2,
     "name": " peanut peacho chocolate",
-    "weight": [300, 600],
-    "price": [3.7, 8.8],
     "image": "assets/peacho.png",
+    "price": 3.7,
     "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric.",
-    "color": "d49d28"
+    "color": "d49d28",
+    "children": [
+      { "weight": 300, "price": 3.7 },
+      { "weight": 600, "price": 8.8 }
+    ]
   },
   {
     "id": 3,
     "name": " almond butter",
-    "weight": [300],
-    "price": [5.3],
     "image": "assets/almond2.png",
+    "price": 5.3,
     "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric.",
-    "color": "2b6cbf"
+    "color": "2b6cbf",
+    "children": [{ "weight": 300, "price": 5.3 }]
   },
   {
     "id": 4,
     "name": " mix nuts",
-    "weight": [300, 600],
-    "price": [3.6, 10],
     "image": "assets/mixNuts.png",
+    "price": 3.6,
     "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric.",
-    "color": "bb5f39"
+    "color": "bb5f39",
+    "children": [
+      { "weight": 300, "price": 3.6 },
+      { "weight": 600, "price": 10 }
+    ]
   },
   {
     "id": 5,
     "name": " stay Fit",
-    "weight": [300, 600],
-    "price": [5.3, 8.6],
     "image": "assets/stayFit.png",
+    "price": 5.3,
     "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric.",
-    "color": "8495e7"
+    "color": "8495e7",
+    "children": [
+      { "weight": 300, "price": 5.3 },
+      { "weight": 600, "price": 8.6 }
+    ]
   },
   {
     "id": 6,
     "name": " pecan butter",
-    "weight": [250],
-    "price": [6.25],
     "image": "assets/pecan.png",
+    "price": 6.25,
     "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric.",
-    "color": "6fbd5f"
+    "color": "6fbd5f",
+    "children": [{ "weight": 250, "price": 6.25 }]
   },
   {
     "id": 7,
     "name": " cashew butter",
-    "weight": [300],
-    "price": [5.3],
     "image": "assets/cashew.png",
+    "price": 5.3,
     "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric.",
-    "color": "c65baa"
+    "color": "c65baa",
+    "children": [{ "weight": 300, "price": 5.3 }]
   }
 ]

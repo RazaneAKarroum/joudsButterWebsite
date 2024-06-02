@@ -38,7 +38,7 @@ function addDataToProducts() {
       newProduct.classList.add("productCard");
       newProduct.innerHTML = `<img src="${product.image}" alt="">
                 <span>${product.name}</span>
-                <span class="price">from ${product.price1}</span>
+                <span class="price">from ${product.price[0]}</span>
                 <button class="addToCartBtn">add to cart</button>`;
       listProductHTML.appendChild(newProduct);
     });
@@ -52,6 +52,6 @@ listProductHTML.addEventListener("click", (event) => {
   if (positionClick.classList.contains("addToCartBtn")) {
     let id_product = positionClick.parentElement.dataset.id;
     console.log(id_product);
-    addToCart(id_product, 1);
+    addToCart(id_product, 1, 0);
   }
 });

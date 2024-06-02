@@ -9,6 +9,7 @@ const cartTab = document.getElementById("cartTab");
 let listCartHTML = document.querySelector(".listCart");
 let cartNbr = document.getElementsByClassName("shoppingCartNbr");
 let subtotalSpan = document.querySelector(".cartSubtotal");
+let productTotalPrice = document.querySelector(".totalPrice");
 let cart = [];
 // let products = [];
 let body = document.querySelector("body");
@@ -101,22 +102,21 @@ function goToPage(link) {
 // }
 
 function addToCart(product_id, itemQuantity) {
-  // const addToCart = (product_id) => {
   let positionThisProductInCart = cart.findIndex((value) => value.product_id == product_id);
   if (cart.length <= 0) {
     cart = [
       {
         product_id: product_id,
-        quantity: itemQuantity,
+        quantity: Number(itemQuantity),
       },
     ];
   } else if (positionThisProductInCart < 0) {
     cart.push({
       product_id: product_id,
-      quantity: itemQuantity,
+      quantity: Number(itemQuantity),
     });
   } else {
-    cart[positionThisProductInCart].quantity = cart[positionThisProductInCart].quantity + itemQuantity;
+    cart[positionThisProductInCart].quantity = cart[positionThisProductInCart].quantity + Number(itemQuantity);
   }
   addCartToHTML();
   addCartToMemory();
@@ -125,25 +125,27 @@ const addCartToMemory = () => {
   localStorage.setItem("cart", JSON.stringify(cart));
 };
 const addCartToHTML = () => {
+  // console.log(`addToCart function is entered and this is the index: ${index}`);
   listCartHTML.innerHTML = "";
-  let totalQuantity = 0;
-  let subtotal = 0;
+  let totalQuantity = 0; //this is the total quantity of items in cart to be displayed in shopping cart icon
+  let subtotal = 0; //this is the total price of all items added to cart
   if (cart.length > 0) {
     cart.forEach((item) => {
-      totalQuantity = totalQuantity + item.quantity;
-      let totalItemPrice = 0;
+      totalQuantity += item.quantity;
+      let totalItemPrice = 0; //this is the total price of each item seperately
       // totalQuantity +=
       // console.log(typeof totalQuantity);
       // console.log(typeof item.quantity);
       // console.log(totalQuantity);
-      let newItem = document.createElement("div");
-      newItem.classList.add("cartItem");
-      newItem.dataset.id = item.product_id;
+      let newItem = document.createElement("div"); //<div></div>
+      newItem.classList.add("cartItem"); //<div class="cartItem"></div>
+      newItem.dataset.id = item.product_id; //<div class="cartItem" data-id="product_id"></div>
 
-      let positionProduct = products.findIndex((value) => value.id == item.product_id);
-      let info = products[positionProduct];
+      let positionProduct = products.findIndex((value) => value.id == item.product_id); //get the index of the product object from the json file
+      let info = products[positionProduct]; //get the details of the object
       listCartHTML.appendChild(newItem);
-      totalItemPrice += Number(info.price[0]) * Number(item.quantity);
+      //console.log(`info.price[0] = ${info.price[0]}`);
+      totalItemPrice += Number(info.price) * Number(item.quantity);
       totalItemPrice = Math.round(totalItemPrice * 100) / 100;
       subtotal += totalItemPrice;
       subtotal = Math.round(subtotal * 100) / 100;
@@ -154,7 +156,8 @@ const addCartToHTML = () => {
       <div class="cartItemImage"><img src="${info.image}"></div>
       <div class="cartItemDetails">
         <div class="cartItemName">${info.name}</div>
-        <div class="totalPrice">$${totalItemPrice}</div>
+        <div class="cartItemWeight">( ${info.weight[0]}g )</div>
+        <div class="totalPrice" >$${totalItemPrice}</div>
         <div class="cartItemQuantity">
           <i class="fa-solid fa-minus minus"></i>
           <span>${item.quantity}</span>
@@ -180,6 +183,10 @@ listCartHTML.addEventListener("click", (event) => {
   if (positionClick.classList.contains("minus") || positionClick.classList.contains("plus")) {
     let product_id = positionClick.parentElement.parentElement.parentElement.dataset.id;
     console.log(`this is the product id: ${product_id}`);
+    // let productTotalPriceIndex = positionClick.dataset.id;
+    // console.log(productTotalPriceIndex);
+    //let productTotalPriceIndex = positionClick.parentElement.parentElement.children.classList.contains("totalPrice");
+    //console.log(productTotalPriceIndex);
     let type = "minus";
     if (positionClick.classList.contains("plus")) {
       type = "plus";

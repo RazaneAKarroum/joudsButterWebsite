@@ -6,6 +6,7 @@ const number = document.querySelector(".quantityNbr");
 // let similarProduct = document.getElementsByClassName("productCard");
 let listProduct = document.querySelector(".similarProductsList");
 let num = Number(number.innerHTML);
+let productIndex = 0;
 
 console.log(num);
 
@@ -87,6 +88,7 @@ function showDetail() {
     newWeight.classList.add("productWeight");
     newWeight.onclick = () => {
       detail.querySelector(".productPrice").innerText = `$ ${thisProduct.price[index]}`;
+      productIndex = index;
     };
     newWeight.innerHTML = `${weight}g`;
     productWeight.appendChild(newWeight);
@@ -109,6 +111,7 @@ function showDetail() {
 
   d.addEventListener("click", (event) => {
     console.log(event);
+    //console.log(`this is the index number when add to cart is clicked: ${productIndex}`);
     let positionClick = event.target;
     if (positionClick.classList.contains("pdAddToCartBtn")) {
       console.log("this is the product id: " + productId);
@@ -163,6 +166,6 @@ listProduct.addEventListener("click", (event) => {
   if (positionClick.classList.contains("addToCartBtn")) {
     let id_product = positionClick.parentElement.dataset.id;
     console.log(`this is the product id clicked: ${id_product}`);
-    addToCart(id_product, 1);
+    addToCart(id_product, 1, 0);
   }
 });
