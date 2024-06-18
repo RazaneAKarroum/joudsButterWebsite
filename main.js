@@ -76,7 +76,8 @@ for (var i = 0; i < bestSellerProduct.length; i++) {
       window.open(`/${e.target.id}`);
     } else {
       let bestSellerId = e.target.dataset.id;
-      addToCart(bestSellerId, 1);
+      let productWeight = e.target.dataset.weight;
+      addToCart(bestSellerId, 1, productWeight);
     }
   });
 }
@@ -101,19 +102,23 @@ function goToPage(link) {
 //   // }
 // }
 
-function addToCart(product_id, itemQuantity) {
-  let positionThisProductInCart = cart.findIndex((value) => value.product_id == product_id);
+function addToCart(product_id, itemQuantity, itemWeight) {
+  let positionThisProductInCart = cart.findIndex(
+    (value) => value.product_id == product_id && value.weight == itemWeight
+  );
   if (cart.length <= 0) {
     cart = [
       {
         product_id: product_id,
         quantity: Number(itemQuantity),
+        weight: itemWeight,
       },
     ];
   } else if (positionThisProductInCart < 0) {
     cart.push({
       product_id: product_id,
       quantity: Number(itemQuantity),
+      weight: itemWeight,
     });
   } else {
     cart[positionThisProductInCart].quantity = cart[positionThisProductInCart].quantity + Number(itemQuantity);
@@ -137,15 +142,22 @@ const addCartToHTML = () => {
       // console.log(typeof totalQuantity);
       // console.log(typeof item.quantity);
       // console.log(totalQuantity);
+
       let newItem = document.createElement("div"); //<div></div>
       newItem.classList.add("cartItem"); //<div class="cartItem"></div>
       newItem.dataset.id = item.product_id; //<div class="cartItem" data-id="product_id"></div>
+      newItem.dataset.weight = item.weight; //<div class="cartItem" data-id="product_id" data-weight="weight"></div>
 
       let positionProduct = products.findIndex((value) => value.id == item.product_id); //get the index of the product object from the json file
       let info = products[positionProduct]; //get the details of the object
       listCartHTML.appendChild(newItem);
       //console.log(`info.price[0] = ${info.price[0]}`);
-      totalItemPrice += Number(info.price) * Number(item.quantity);
+      let childFound = info.children.filter((product) => {
+        return product.weight == item.weight;
+      })[0];
+      let productPrice = childFound.price;
+      console.log(`this is the child price: ${productPrice}`);
+      totalItemPrice += Number(productPrice) * Number(item.quantity);
       totalItemPrice = Math.round(totalItemPrice * 100) / 100;
       subtotal += totalItemPrice;
       subtotal = Math.round(subtotal * 100) / 100;
@@ -156,7 +168,7 @@ const addCartToHTML = () => {
       <div class="cartItemImage"><img src="${info.image}"></div>
       <div class="cartItemDetails">
         <div class="cartItemName">${info.name}</div>
-        <div class="cartItemWeight">( ${info.weight[0]}g )</div>
+        <div class="cartItemWeight">( ${item.weight}g )</div>
         <div class="totalPrice" >$${totalItemPrice}</div>
         <div class="cartItemQuantity">
           <i class="fa-solid fa-minus minus"></i>
@@ -182,6 +194,7 @@ listCartHTML.addEventListener("click", (event) => {
   console.log(event);
   if (positionClick.classList.contains("minus") || positionClick.classList.contains("plus")) {
     let product_id = positionClick.parentElement.parentElement.parentElement.dataset.id;
+    let product_weight = positionClick.parentElement.parentElement.parentElement.dataset.weight;
     console.log(`this is the product id: ${product_id}`);
     // let productTotalPriceIndex = positionClick.dataset.id;
     // console.log(productTotalPriceIndex);
@@ -191,12 +204,12 @@ listCartHTML.addEventListener("click", (event) => {
     if (positionClick.classList.contains("plus")) {
       type = "plus";
     }
-    changeQuantityCart(product_id, type);
+    changeQuantityCart(product_id, type, product_weight);
     1;
   }
 });
-const changeQuantityCart = (product_id, type) => {
-  let positionItemInCart = cart.findIndex((value) => value.product_id == product_id);
+const changeQuantityCart = (product_id, type, product_weight) => {
+  let positionItemInCart = cart.findIndex((value) => value.product_id == product_id && value.weight == product_weight);
   if (positionItemInCart >= 0) {
     let info = cart[positionItemInCart];
     switch (type) {

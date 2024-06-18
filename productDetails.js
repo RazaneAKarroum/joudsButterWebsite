@@ -1,20 +1,30 @@
+let productId;
+let thisProduct;
 let detail = document.querySelector(".productDetailsDiv");
+let productPrice = detail.querySelector(".productPrice");
 let q = detail.querySelector("#productQuantity").innerText;
 const plus = document.querySelector(".increaseQuantity");
 const minus = document.querySelector(".decreaseQuantity");
 const number = document.querySelector(".quantityNbr");
+let productWeight = detail.querySelector(".productWeightlist");
+let productSubtotal = 0;
 // let similarProduct = document.getElementsByClassName("productCard");
 let listProduct = document.querySelector(".similarProductsList");
 let num = Number(number.innerHTML);
+let option = null;
 let productIndex = 0;
 
 console.log(num);
 
-plus.addEventListener("click", () => {
+plus.addEventListener("click", (event) => {
+  console.log(event.target);
   num++;
   number.innerHTML = num;
   q++;
   console.log(`this is the quantity: ${q}`);
+  refreshInfo();
+  //productSubtotal = Number(productPrice) * Number(q);
+  //detail.querySelector(".subtotal").innerText = `$ ${productSubtotal}`;
 });
 
 minus.addEventListener("click", () => {
@@ -23,6 +33,7 @@ minus.addEventListener("click", () => {
     number.innerHTML = num;
     q--;
     console.log(`this is the quantity: ${q}`);
+    refreshInfo();
   }
 });
 
@@ -63,9 +74,9 @@ function showDetail() {
   // remove datas default from HTML
   // let detail = document.querySelector(".productDetailsDiv");
 
-  let productId = new URLSearchParams(window.location.search).get("id");
-  let thisProduct = products.filter((value) => value.id == productId)[0];
-  let productWeight = detail.querySelector(".productWeightlist");
+  productId = new URLSearchParams(window.location.search).get("id");
+  thisProduct = products.filter((value) => value.id == productId)[0];
+
   // let randomId = Math.floor(Math.random() * products.length + 1);
   //if there is no product with id = productId => return to home page
   if (!thisProduct) {
@@ -74,25 +85,42 @@ function showDetail() {
 
   detail.querySelector(".productImg img").src = thisProduct.image;
   detail.querySelector(".productName").innerText = thisProduct.name;
-  detail.querySelector(".productPrice").innerText = `From ${thisProduct.price[0]}$`;
-  detail.querySelector(".productDescription").innerText = "$" + thisProduct.description;
+  detail.querySelector(".productPrice").innerText = `From ${thisProduct.price}$`;
+  detail.querySelector(".productDescription").innerText = thisProduct.description;
   detail.querySelector(".pdAddToCartBtn").style.backgroundColor = `#${thisProduct.color}`;
+  detail.querySelector(".subtotal").innerText = `$ ${productSubtotal}`;
+
+  //insert product weight into li tags ---test---
+
+  let listWeight = thisProduct.children.map((children) => children.weight);
+  listWeight.forEach((weight) => {
+    let li = document.createElement("li");
+    li.classList.add("productWeight");
+    li.innerHTML = `${weight}g`;
+    li.setAttribute("data-weight", weight);
+    li.onclick = () => {
+      option = option !== weight ? weight : null;
+      console.log(option);
+      refreshInfo();
+    };
+    productWeight.appendChild(li);
+  });
 
   //insert product weight into li tags
-  console.log(`this is the product weight table: ${thisProduct.weight}`);
-  let w = thisProduct.weight;
-  w.forEach((weight, index) => {
-    console.log(weight);
-    console.log(`this is the weight index: ${index}`);
-    let newWeight = document.createElement("li");
-    newWeight.classList.add("productWeight");
-    newWeight.onclick = () => {
-      detail.querySelector(".productPrice").innerText = `$ ${thisProduct.price[index]}`;
-      productIndex = index;
-    };
-    newWeight.innerHTML = `${weight}g`;
-    productWeight.appendChild(newWeight);
-  });
+  // console.log(`this is the product weight table: ${thisProduct.weight}`);
+  // let w = thisProduct.weight;
+  // w.forEach((weight, index) => {
+  //   console.log(weight);
+  //   console.log(`this is the weight index: ${index}`);
+  //   let newWeight = document.createElement("li");
+  //   newWeight.classList.add("productWeight");
+  //   newWeight.onclick = () => {
+  //     detail.querySelector(".productPrice").innerText = `$ ${thisProduct.price[index]}`;
+  //     productIndex = index;
+  //   };
+  //   newWeight.innerHTML = `${weight}g`;
+  //   productWeight.appendChild(newWeight);
+  // });
 
   let d = detail.querySelector(".pdAddToCartBtn");
   // let q = detail.querySelector("#productQuantity").innerText;
@@ -116,7 +144,12 @@ function showDetail() {
     if (positionClick.classList.contains("pdAddToCartBtn")) {
       console.log("this is the product id: " + productId);
       console.log(`this is the end quantity: ${q}`);
-      addToCart(productId, q);
+      console.log(option);
+      if (option == null) {
+        option = thisProduct.children[0].weight;
+      }
+      console.log(`tis is the option after if: ${option}`);
+      addToCart(productId, q, option);
     }
   });
 
@@ -137,9 +170,10 @@ function showDetail() {
     };
     newProduct.classList.add("productCard");
     newProduct.dataset.id = product.id;
+    newProduct.dataset.weight = product.children[0].weight;
     newProduct.innerHTML = `<img src="${product.image}" alt="">
               <h2>${product.name}</h2>
-              <div class="price">from ${product.price[0]} $</div>
+              <div class="price">from ${product.price} $</div>
               <button class="addToCartBtn">add to cart</button>`;
     listProduct.appendChild(newProduct);
   });
@@ -165,7 +199,35 @@ listProduct.addEventListener("click", (event) => {
   let positionClick = event.target;
   if (positionClick.classList.contains("addToCartBtn")) {
     let id_product = positionClick.parentElement.dataset.id;
+    let product_weight = positionClick.parentElement.dataset.weight;
     console.log(`this is the product id clicked: ${id_product}`);
-    addToCart(id_product, 1, 0);
+    addToCart(id_product, 1, product_weight);
   }
 });
+
+const refreshInfo = () => {
+  // colors
+  weightOldActive = productWeight.querySelector("li.activeWeight");
+  if (weightOldActive) weightOldActive.classList.remove("activeWeight");
+  if (option !== null) {
+    console.log(`this is option: ${option}`);
+    let weightNewActive = productWeight.querySelector('li[data-weight="' + option + '"]');
+    console.log(weightNewActive);
+    weightNewActive.classList.add("activeWeight");
+  }
+
+  // set price
+  if (option === null) {
+    productPrice.innerText = `$ ${thisProduct.price}`;
+    productSubtotal = Math.floor(Number(thisProduct.price) * Number(q) * 10) / 10;
+    detail.querySelector(".subtotal").innerText = `$ ${productSubtotal}`;
+  } else {
+    let childFound = thisProduct.children.filter((product) => {
+      return product.weight == option;
+    })[0];
+    productPrice.innerText = `$ ${childFound.price}`;
+    productSubtotal = Math.floor(Number(childFound.price) * Number(q) * 10) / 10;
+    console.log(productSubtotal);
+    detail.querySelector(".subtotal").innerText = `$ ${productSubtotal}`;
+  }
+};

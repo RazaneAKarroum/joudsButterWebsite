@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    <title>Peanut Butter</title>
+    <title>Contact Us - Joud's Buter</title>
   </head>
   <body class="oswald-400">
     <!-- loader -->
@@ -99,51 +99,48 @@
           <a href="https://wa.me/71315517" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
-      <section class="productDetailsSec">
-        <h1>product details</h1>
-        <div class="productDetailsDiv">
-          <div class="productImg">
-            <img src="" alt="Peanut Butter" />
+      <section id="contactUsSec">
+        <h1 class="contactUsTitle">How can we help you?</h1>
+        <div class="contactDiv">
+          <div class="contactCard">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Whatsapp Us:</span>
+            <a href="https://wa.me/71315517" target="_blank">+961 71 315 517</a>
           </div>
-          <div class="productDetailsContent">
-            <h3 class="productName"></h3>
-            <span class="productPrice"></span>
-            <div class="productWeightDiv">
-              <span class="weightTitle">Weight:</span>
-              <ul class="productWeightlist"></ul>
-            </div>
-            <div class="productQuantityDiv">
-              <span class="quantityTitle">Quantity:</span>
-              <div class="productQuantityWrapper">
-                <span class="decreaseQuantity"><i class="fa-solid fa-minus"></i></span>
-                <span class="quantityNbr" id="productQuantity">1</span>
-                <span class="increaseQuantity"><i class="fa-solid fa-plus"></i></span>
-              </div>
-              <div class="subtotalDiv">
-                <span>Subtotal:</span>
-                <span class="subtotal"></span>
-              </div>
-            </div>
-            <div class="productDetailsBtnDiv">
-              <button class="pdAddToCartBtn">add to cart</button>
-              <button class="checkoutBtn">checkout</button>
-            </div>
-            <div class="accordion">
-              <div class="productDescription"></div>
-              <div class="productIngredients"></div>
-              <div class="productBenefits"></div>
-            </div>
+          <div class="contactCard">
+            <i class="fa-solid fa-phone"></i>
+            <span>Call Us:</span>
+            <a href="tel: 0096171315517">+961 71 315 517</a>
+          </div>
+          <div class="contactCard">
+            <i class="fa-brands fa-instagram"></i>
+            <span>message us on instagram</span>
+            <a href="https://www.instagram.com/jouds_butter/" target="_blank">jouds_butter</a>
           </div>
         </div>
-        <div class="similarProductsDiv">
-          <div class="similarProductsHeader">
-            <h3 class="similarProductsTitle">Similar product</h3>
-            <a href="products.html" class="seeAllBtn">
-              see all
-              <i class="fa-solid fa-arrow-right seeAlArrow"></i>
-            </a>
-          </div>
-          <div class="similarProductsList"></div>
+        <div class="messageFormDiv">
+          <h3>Or kindly send us a message</h3>
+          <form class="submitMessageForm">
+            <div class="inputField">
+              <i class="fa-regular fa-circle-user"></i>
+              <input type="text" placeholder="Your name" />
+            </div>
+            <div class="inputField">
+              <i class="fa-regular fa-envelope"></i>
+              <input type="email" placeholder="Your email address" />
+            </div>
+            <div class="inputField">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+              <input type="number" placeholder="Your phone number" />
+            </div>
+            <div class="inputField">
+              <i class="fa-regular fa-comment-dots"></i>
+              <textarea name="message" placeholder="write your message here"></textarea>
+            </div>
+            <div style="align-self: flex-start">
+              <button type="submit" class="addToCartBtn">Send Message</button>
+            </div>
+          </form>
         </div>
       </section>
       <!-- footer section -->
@@ -178,7 +175,6 @@
       </div>
     </div>
     <script src="https://kit.fontawesome.com/e84b759868.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="productDetails.js"></script>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

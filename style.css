@@ -870,16 +870,18 @@ a.activeLink {
 
 /* products page  */
 /* all products styling */
-#allProductsSec {
+#allProductsSec,
+#contactUsSec {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3rem;
+  padding: 3rem 1rem;
   text-transform: capitalize;
 }
 
-.allProductsTitle {
+.allProductsTitle,
+.contactUsTitle {
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   margin-bottom: 3rem;
 }
@@ -951,6 +953,11 @@ a.activeLink {
   list-style-type: none;
   padding: 0.8rem 1.5rem;
   border: 1px solid rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.productWeightlist .activeWeight {
+  border: 2px solid var(--butter-color);
 }
 
 .productPrice {
@@ -1194,6 +1201,107 @@ body.showCart .main {
   width: 50%;
 }
 
+/* Contact Us page Styling */
+
+.contactDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.contactCard {
+  width: 80%;
+  height: 250px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: var(--butter-color);
+  color: var(--bg-color);
+  border-radius: 20px;
+  /* border: 1px solid var(--butter-color); */
+}
+
+.contactCard i {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.contactCard a {
+  color: var(--bg-color);
+  text-decoration: none;
+  transition: 1s ease-in;
+  letter-spacing: 0.1rem;
+}
+
+.contactCard a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.1rem;
+  text-underline-offset: 0.3rem;
+}
+
+.contactCard span {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.messageFormDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem 2rem;
+}
+
+.messageFormDiv h3 {
+  margin-bottom: 2rem;
+}
+
+.submitMessageForm {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.inputField {
+  width: 100%;
+  border: 1px solid var(--butter-color);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.inputField i {
+  color: var(--butter-color);
+  font-size: 1.5rem;
+}
+
+.inputField input,
+.inputField textarea {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--primary-text-color);
+  margin-left: 0.5rem;
+}
+
+.inputField textarea {
+  width: 100%;
+  height: 5rem;
+}
+
 /* responsive */
 @media screen and (min-width: 469px) {
   .logoDiv {
@@ -1201,6 +1309,9 @@ body.showCart .main {
   }
   .feedbackSec {
     margin-bottom: 0.05rem;
+  }
+  .contactDiv {
+    width: 80%;
   }
 }
 
@@ -1337,6 +1448,12 @@ body.showCart .main {
   .similarProductsDiv {
     width: 80%;
     padding: 1rem;
+  }
+  .contactDiv {
+    width: 100%;
+  }
+  .contactCard {
+    width: 30%;
   }
 }
 

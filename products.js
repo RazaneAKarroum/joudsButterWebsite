@@ -35,10 +35,11 @@ function addDataToProducts() {
         }
       };
       newProduct.dataset.id = product.id;
+      newProduct.dataset.weight = product.children[0].weight;
       newProduct.classList.add("productCard");
       newProduct.innerHTML = `<img src="${product.image}" alt="">
                 <span>${product.name}</span>
-                <span class="price">from ${product.price[0]}</span>
+                <span class="price">from $ ${product.price}</span>
                 <button class="addToCartBtn">add to cart</button>`;
       listProductHTML.appendChild(newProduct);
     });
@@ -51,7 +52,8 @@ listProductHTML.addEventListener("click", (event) => {
   let positionClick = event.target;
   if (positionClick.classList.contains("addToCartBtn")) {
     let id_product = positionClick.parentElement.dataset.id;
-    console.log(id_product);
-    addToCart(id_product, 1, 0);
+    let productWeight = positionClick.parentElement.dataset.weight;
+    console.log(id_product, productWeight);
+    addToCart(id_product, 1, productWeight);
   }
 });
