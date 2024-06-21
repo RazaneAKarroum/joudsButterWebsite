@@ -52,9 +52,9 @@
               <a href="index.html#mainSection" class="activeLink">Home</a>
               <a href="products.html#allProductsSec">Our Products</a>
               <a href="index.html#aboutUsSection">About Us</a>
-              <a href="contactUs.html#contactUsSec">Contact Us</a>
-              <a href="">Store Locator</a>
-              <a href="index.html#contactUsSection">Log In</a>
+              <a href="contactUs.html">Contact Us</a>
+              <a href="storeLocator.html">Store Locator</a>
+              <a href="#loginFormDiv" class="loginLink">Log In</a>
             </nav>
           </nav>
         </div>
@@ -69,12 +69,12 @@
               <a href="index.html#mainSection" class="activeLink">Home</a>
               <a href="products.html#allProductsSec">Our Products</a>
               <a href="index.html#aboutUsSection">About Us</a>
-              <a href="contactUs.html#contactUsSec">Contact Us</a>
-              <a href="">Store Locator</a>
+              <a href="contactUs.html">Contact Us</a>
+              <a href="storeLocator.html">Store Locator</a>
             </nav>
             <div class="headerIconsDiv">
               <div class="loginDiv">
-                <a href="#" class="loginBtn">
+                <a href="#loginFormDiv" class="loginBtn loginLink">
                   <i class="fa-regular fa-circle-user"></i>
                   <span>Log In</span>
                 </a>
@@ -315,9 +315,38 @@
         </section>
       </section>
       <footer class="footer">
-        <div class="footerSocialIcons">
-          <a href="https://www.instagram.com/jouds_butter/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://wa.me/71315517" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        <div class="footerLinks">
+          <div class="mainMenuDiv linksSec">
+            <h4 class="footerTitle">Main Links</h4>
+            <div>
+              <a href="index.html#mainSection">Home</a>
+              <a href="products.html#allProductsSec">Our Products</a>
+              <a href="index.html#aboutUsSection">About Us</a>
+              <a href="contactUs.html">Contact Us</a>
+              <a href="storeLocator.html">Store Locator</a>
+              <a href="index.html#contactUsSection">Log In</a>
+            </div>
+          </div>
+          <div class="contactInfoDiv linksSec">
+            <h4 class="footerTitle">Contact info</h4>
+            <div>
+              <i class="fa-solid fa-phone"></i>
+              <span>71 315 517</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Semqanieh, Mount Lebanon, Lebanon</span>
+            </div>
+          </div>
+          <div class="linksSec">
+            <h4 class="footerTitle">Follow us</h4>
+            <div class="footerSocialIcons">
+              <a href="https://www.instagram.com/jouds_butter/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://wa.me/71315517" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
         </div>
         <div class="footerCopyright">
           <span>
@@ -345,6 +374,16 @@
         <button class="checkOutBtn">Check Out</button>
       </div>
     </div>
+    <!-- end shopping cart section -->
+
+    <!-- login and registration form -->
+    <div class="loginFormDiv" id="loginFormDiv">
+      <div class="iframeDiv">
+        <iframe src="loginRegistrationForm.html" frameborder="0"></iframe>
+        <i class="fa-solid fa-xmark loginCloseIcon"></i>
+      </div>
+    </div>
+    <!-- end login and registration form -->
 
     <script src="https://kit.fontawesome.com/e84b759868.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="main.js"></script>

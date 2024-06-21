@@ -10,6 +10,7 @@ let listCartHTML = document.querySelector(".listCart");
 let cartNbr = document.getElementsByClassName("shoppingCartNbr");
 let subtotalSpan = document.querySelector(".cartSubtotal");
 let productTotalPrice = document.querySelector(".totalPrice");
+let loginBtn = document.getElementsByClassName("loginLink");
 let cart = [];
 // let products = [];
 let body = document.querySelector("body");
@@ -66,6 +67,29 @@ document.onclick = function (e) {
     navbar.classList.remove("active");
   }
 };
+
+//open and close login form
+for (var i = 0; i < loginBtn.length; i++) {
+  var login = loginBtn[i];
+  login.addEventListener("click", () => {
+    console.log("login btn is clicked");
+    document.querySelector(".loginFormDiv").style.display = "flex";
+  });
+}
+
+document.querySelector(".loginCloseIcon").addEventListener("click", () => {
+  document.querySelector(".loginFormDiv").style.display = "none";
+});
+
+// console.log(loginBtn);
+// loginBtn.forEach((login) => {
+//   console.log(`this is the login btn ${login}`);
+//   login.addEventListener("click", () => {
+//     console.log(`login btn is clicked`);
+//     document.querySelector(".loginFormDiv").style.display = "flex";
+//   });
+// });
+//end open and close login form
 
 for (var i = 0; i < bestSellerProduct.length; i++) {
   var bestSellerProductClicked = bestSellerProduct[i];
