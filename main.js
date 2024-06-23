@@ -68,6 +68,7 @@ document.onclick = function (e) {
   }
 };
 
+//start login and registration form
 //open and close login form
 for (var i = 0; i < loginBtn.length; i++) {
   var login = loginBtn[i];
@@ -80,6 +81,35 @@ for (var i = 0; i < loginBtn.length; i++) {
 document.querySelector(".loginCloseIcon").addEventListener("click", () => {
   document.querySelector(".loginFormDiv").style.display = "none";
 });
+
+//show hidden password
+// const showHiddenPass = () => {
+//   const passInput = document.getElementById("loginPassword");
+//   const eyeIcon = document.getElementById("loginEye");
+//   console.log(`this is passInput: ${passInput}`);
+//   console.log(`this is eyeIcon: ${eyeIcon}`);
+
+//   eyeIcon.addEventListener("click", () => {
+//     console.log(`${eyeIcon} is clicked`);
+//     //change password to text
+//     if (passInput.type === "password") {
+//       //switch to text
+//       passInput.type = "text";
+//       //icon change
+//       eyeIcon.classList.add("fa-eye");
+//       eyeIcon.classList.remove("fa-eye-slash");
+//     } else {
+//       //change to password
+//       InputDeviceInfo.type = "password";
+//       //icon change
+//       eyeIcon.classList.add("fa-eye-slash");
+//       eyeIcon.classList.remove("fa-eye");
+//     }
+//   });
+// };
+
+// showHiddenPass();
+//end login and registration form
 
 // console.log(loginBtn);
 // loginBtn.forEach((login) => {

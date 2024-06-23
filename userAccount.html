@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    <title>Store Locator - Joud's Buter</title>
+    <title>Account - Joud's Butter</title>
   </head>
   <body class="oswald-400">
     <!-- loader -->
@@ -23,8 +23,7 @@
         <div class="loading-spinner-circle"></div>
       </div>
     </div>
-
-    <div class="main">
+    <section class="main">
       <div class="marqueeDiv" id="marquee">
         <div class="marquee">
           <div>Delivery all over Lebanon</div>
@@ -35,9 +34,9 @@
         <div id="phoneView">
           <nav class="phoneViewNavbar">
             <div class="shoppingCartDiv">
-              <a href="#" class="shoppingCartBtn">
+              <div class="shoppingCartBtn">
                 <i class="fa-solid fa-cart-shopping"></i>
-              </a>
+              </div>
               <span class="shoppingCartNbr">0</span>
             </div>
             <div class="logoDiv">
@@ -50,12 +49,12 @@
               <i class="fa-solid fa-xmark" id="closeIcon"></i>
             </div>
             <nav id="navbar">
-              <a href="index.html#mainSection">Home</a>
+              <a href="index.html#mainSection" class="activeLink">Home</a>
               <a href="products.html#allProductsSec">Our Products</a>
               <a href="index.html#aboutUsSection">About Us</a>
               <a href="contactUs.html">Contact Us</a>
               <a href="storeLocator.html">Store Locator</a>
-              <a href="index.html#contactUsSection">Log In</a>
+              <a href="#loginFormDiv" class="loginLink">Log In</a>
             </nav>
           </nav>
         </div>
@@ -70,20 +69,20 @@
               <a href="index.html#mainSection" class="activeLink">Home</a>
               <a href="products.html#allProductsSec">Our Products</a>
               <a href="index.html#aboutUsSection">About Us</a>
-              <a href="contactUs.html#contactUsSec">Contact Us</a>
+              <a href="contactUs.html">Contact Us</a>
               <a href="storeLocator.html">Store Locator</a>
             </nav>
             <div class="headerIconsDiv">
               <div class="loginDiv">
-                <a href="#" class="loginBtn">
+                <a href="#loginFormDiv" class="loginBtn loginLink">
                   <i class="fa-regular fa-circle-user"></i>
                   <span>Log In</span>
                 </a>
               </div>
               <div class="shoppingCartDiv">
-                <a href="#" class="shoppingCartBtn">
+                <div class="shoppingCartBtn">
                   <i class="fa-solid fa-cart-shopping"></i>
-                </a>
+                </div>
                 <span class="shoppingCartNbr">0</span>
               </div>
             </div>
@@ -99,29 +98,14 @@
           <a href="https://wa.me/71315517" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
-      <section id="storeLocatorSec">
-        <h1 class="pageTitle">You can find us here!</h1>
-        <div class="storeLocatoreDiv">
-          <div class="locationInfo">
-            <i class="fa-solid fa-location-dot"></i>
-            <span>La Belle Blanche, Semqanieh, Mount Lebanon, Lebanon</span>
-            <p>Tel: 03 383 999</p>
-            <p>opening hours: 10am - 8pm</p>
-          </div>
-
-          <div class="googleMap">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d415.05421737878!2d35.59603300170586!3d33.67183150154271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151f21d45b2af9cd%3A0xc458d5e6de3f23fb!2sLa%20Belle%20Blanche!5e0!3m2!1sen!2slb!4v1718791947022!5m2!1sen!2slb"
-              width="600"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
+      <section id="userAccountSec">
+        <h1 class="pageTitle">
+          Hello
+          <span>User Name</span>
+          !
+        </h1>
       </section>
-      <!-- footer section -->
+
       <footer class="footer">
         <div class="footerLinks">
           <div class="mainMenuDiv linksSec">
@@ -164,7 +148,8 @@
           </span>
         </div>
       </footer>
-    </div>
+    </section>
+
     <!-- shopping cart section -->
     <div class="cartTab" id="cartTab">
       <div class="cartHeader">
@@ -181,6 +166,7 @@
         <button class="checkOutBtn">Check Out</button>
       </div>
     </div>
+    <!-- end shopping cart section -->
 
     <!-- login and registration form -->
     <div class="loginFormDiv" id="loginFormDiv">
@@ -190,6 +176,7 @@
       </div>
     </div>
     <!-- end login and registration form -->
+
     <script src="https://kit.fontawesome.com/e84b759868.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="main.js"></script>
   </body>

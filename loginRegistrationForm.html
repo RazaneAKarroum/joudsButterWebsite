@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="loginStyles.css" />
   </head>
   <body id="loginRegistrationBody" style="background: transparent">
-    <div class="wrapper" style="background: transparent">
+    <div class="wrapper" id="loginForm" style="background: transparent">
       <div class="formBox login" style="background: transparent">
         <h2>Login</h2>
         <form action="">
@@ -33,7 +33,7 @@
             <div class="inputLoginBox">
               <input type="password" id="loginPassword" class="loginInput" placeholder="" required />
               <label class="loginLabel">Password</label>
-              <i class="fa-solid fa-eye-slash loginEye"></i>
+              <i class="fa-regular fa-eye-slash loginEye" id="loginEye"></i>
             </div>
           </div>
           <div class="rememberForgot">
@@ -47,7 +47,51 @@
           <div class="loginRegister">
             <p>
               Don't have an account?
-              <a href="#" class="registerLink">Register Now</a>
+              <a href="#registrationForm" class="registerLink">Register Now</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="wrapper" id="registrationForm" style="background: transparent">
+      <div class="formBox register" style="background: transparent">
+        <h2>Registration</h2>
+        <form action="">
+          <div class="inputBox">
+            <span class="icon"><i class="fa-regular fa-user"></i></span>
+            <div class="inputLoginBox">
+              <input type="text" class="loginInput" placeholder="" required />
+              <label class="loginLabel">First Name</label>
+            </div>
+          </div>
+          <div class="inputBox">
+            <span class="icon"><i class="fa-regular fa-envelope"></i></span>
+            <div class="inputLoginBox">
+              <input type="text" class="loginInput" placeholder="" required />
+              <label class="loginLabel">Last Name</label>
+            </div>
+          </div>
+          <div class="inputBox">
+            <span class="icon"><i class="fa-regular fa-envelope"></i></span>
+            <div class="inputLoginBox">
+              <input type="email" class="loginInput" placeholder="" required />
+              <label class="loginLabel">Email</label>
+            </div>
+          </div>
+          <div class="inputBox">
+            <span class="icon"><i class="fa-solid fa-lock"></i></span>
+            <div class="inputLoginBox">
+              <input type="password" id="loginPassword" class="loginInput" placeholder="" required />
+              <label class="loginLabel">Password</label>
+              <i class="fa-regular fa-eye-slash loginEye" id="loginEye"></i>
+            </div>
+          </div>
+          <button type="submit" class="submitReginBtn">Register</button>
+          <div class="loginRegister">
+            <p>
+              Already have an account?
+              <a href="#loginForm" class="registerLink">Login Now</a>
             </p>
           </div>
         </form>
@@ -55,6 +99,6 @@
     </div>
 
     <script src="https://kit.fontawesome.com/e84b759868.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="loginRegForm.js"></script>
   </body>
 </html>
