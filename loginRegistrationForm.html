@@ -43,7 +43,7 @@
             </label>
             <a href="#">Forgot password?</a>
           </div>
-          <button type="submit" class="submitLoginBtn">Login</button>
+          <button type="submit" class="submitLoginBtn" id="loginBtn">Login</button>
           <div class="loginRegister">
             <p>
               Don't have an account?
@@ -61,33 +61,33 @@
           <div class="inputBox">
             <span class="icon"><i class="fa-regular fa-user"></i></span>
             <div class="inputLoginBox">
-              <input type="text" class="loginInput" placeholder="" required />
+              <input name="firstName" type="text" class="loginInput" placeholder="" required />
               <label class="loginLabel">First Name</label>
             </div>
           </div>
           <div class="inputBox">
             <span class="icon"><i class="fa-regular fa-envelope"></i></span>
             <div class="inputLoginBox">
-              <input type="text" class="loginInput" placeholder="" required />
+              <input name="lastName" type="text" class="loginInput" placeholder="" required />
               <label class="loginLabel">Last Name</label>
             </div>
           </div>
           <div class="inputBox">
             <span class="icon"><i class="fa-regular fa-envelope"></i></span>
             <div class="inputLoginBox">
-              <input type="email" class="loginInput" placeholder="" required />
+              <input name="email" type="email" class="loginInput" placeholder="" required />
               <label class="loginLabel">Email</label>
             </div>
           </div>
           <div class="inputBox">
             <span class="icon"><i class="fa-solid fa-lock"></i></span>
             <div class="inputLoginBox">
-              <input type="password" id="loginPassword" class="loginInput" placeholder="" required />
+              <input name="password" type="password" id="regPassword" class="loginInput" placeholder="" required />
               <label class="loginLabel">Password</label>
-              <i class="fa-regular fa-eye-slash loginEye" id="loginEye"></i>
+              <i class="fa-regular fa-eye-slash loginEye" id="regEye"></i>
             </div>
           </div>
-          <button type="submit" class="submitReginBtn">Register</button>
+          <button type="submit" class="submitLoginBtn" id="regBtn">Register</button>
           <div class="loginRegister">
             <p>
               Already have an account?

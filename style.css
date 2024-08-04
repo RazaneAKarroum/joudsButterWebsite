@@ -1358,23 +1358,57 @@ textarea::placeholder {
   width: 90%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  align-items: start;
+  /* flex-wrap: wrap; */
   gap: 2rem;
 }
 
-.locationInfo {
-  width: 80%;
+/* .locationInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  width: 30%;
+  height: 100%;
+  border-top: 1px solid var(--footer-bg-color);
   font-size: 1.1rem;
+  padding: 1rem 0;
+  overflow: scroll;
+} */
+.locationInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5rem;
+  width: 30%;
+  height: 435px;
+  border-top: 1px solid var(--footer-bg-color);
+  font-size: 1.1rem;
+  padding: 1rem 0;
+  overflow-y: auto;
+  scroll-snap-type: y;
+}
+
+.locationInfo div {
+  border-bottom: 1px solid var(--footer-bg-color);
+  padding-bottom: 1rem;
+  scroll-snap-align: start;
 }
 
 .locationInfo i {
-  color: rgb(199, 3, 3);
+  color: var(--butter-color);
+}
+
+.storeName {
+  color: var(--butter-color);
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .googleMap {
   position: relative;
-  width: 80%;
+  width: 60%;
   padding-bottom: 50%;
   /* border: 1px solid var(--primary-text-color); */
 }
@@ -1428,6 +1462,23 @@ textarea::placeholder {
 }
 
 /* end login and registration form */
+
+/* userAccount styling */
+.userAccountDiv {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5rem;
+  margin-bottom: 1rem;
+}
+
+.userAccountTitle {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* end userAccount styling */
 
 /* responsive */
 @media screen and (min-width: 469px) {
