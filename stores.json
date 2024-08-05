@@ -1,0 +1,28 @@
+[
+    {
+      "id": 1,
+      "name": "La Belle Blanche",
+      "location": "Semqanieh, Mount Lebanon, Lebanon",
+      "tel" : "03 383 999",
+      "openingHours" : "10am - 8pm",
+      "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d415.05421737878!2d35.59603300170586!3d33.67183150154271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151f21d45b2af9cd%3A0xc458d5e6de3f23fb!2sLa%20Belle%20Blanche!5e0!3m2!1sen!2slb!4v1718791947022!5m2!1sen!2slb"
+    },
+    {
+        "id": 2,
+        "name": "Al Sayegh Center",
+        "location": "Bakaata Shouf, Mount Lebanon, Lebanon",
+      "tel" : "03 383 999",
+      "openingHours" : "10am - 8pm",
+        "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3320.554399267011!2d35.59804267516013!3d33.668706137885785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151f207a2619df55%3A0xfa0432c4801c5c3e!2sSayegh%20Center!5e0!3m2!1sen!2slb!4v1722776367837!5m2!1sen!2slb"
+      },
+      {
+        "id": 3,
+        "name": "COOP Bakaata",
+        "location": "Bakaata Shouf, Mount Lebanon, Lebanon",
+      "tel" : "03 383 999",
+      "openingHours" : "10am - 8pm",
+        "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3320.523117141041!2d35.59985207516025!3d33.669516437843285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151f210091c902fd%3A0x49cbefb4193db840!2sCOOP%20BAKAATA!5e0!3m2!1sen!2slb!4v1722776457575!5m2!1sen!2slb"
+      }
+
+  ]
+  
