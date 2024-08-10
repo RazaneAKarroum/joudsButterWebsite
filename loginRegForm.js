@@ -1,6 +1,7 @@
 const loginBtn = document.querySelector("#loginBtn");
 const regBtn = document.getElementsByClassName("submitReginBtn");
 
+
 loginBtn.addEventListener("click", () => {
   console.log("login btn 2 is clicked");
   window.open("/userAccount.html");

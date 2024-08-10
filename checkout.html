@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    <title>Contact Us - Joud's Buter</title>
+    <title>Checkout - Joud's Butter</title>
   </head>
   <body class="oswald-400">
     <!-- loader -->
@@ -23,21 +23,15 @@
         <div class="loading-spinner-circle"></div>
       </div>
     </div>
-
-    <div class="main">
-      <div class="marqueeDiv" id="marquee">
-        <div class="marquee">
-          <div>Delivery all over Lebanon</div>
-          <div>Pay Cash on Delivery</div>
-        </div>
-      </div>
+    <section class="main">
+      
       <header class="header">
         <div id="phoneView">
           <nav class="phoneViewNavbar">
             <div class="shoppingCartDiv">
-              <a href="#" class="shoppingCartBtn">
+              <div class="shoppingCartBtn">
                 <i class="fa-solid fa-cart-shopping"></i>
-              </a>
+              </div>
               <span class="shoppingCartNbr">0</span>
             </div>
             <div class="logoDiv">
@@ -45,18 +39,6 @@
                 <img src="assets/joudButterLogo.jpeg" alt="Joud's Butter Logo" class="logo" />
               </a>
             </div>
-            <div id="togglerDiv">
-              <i class="fa-solid fa-bars" id="menuIcon"></i>
-              <i class="fa-solid fa-xmark" id="closeIcon"></i>
-            </div>
-            <nav id="navbar">
-              <a href="index.html#mainSection">Home</a>
-              <a href="products.html#allProductsSec">Our Products</a>
-              <a href="index.html#aboutUsSection">About Us</a>
-              <a href="contactUs.html">Contact Us</a>
-              <a href="storeLocator.html">Store Locator</a>
-              <a href="#loginFormDiv" class="loginLink">Log In</a>
-            </nav>
           </nav>
         </div>
         <div id="desktopView">
@@ -66,13 +48,7 @@
                 <img src="assets/joudButterLogo.jpeg" alt="Joud's Butter Logo" class="logo" />
               </a>
             </div>
-            <nav id="desktopViewNavbar">
-              <a href="index.html#mainSection" class="activeLink">Home</a>
-              <a href="products.html#allProductsSec">Our Products</a>
-              <a href="index.html#aboutUsSection">About Us</a>
-              <a href="contactUs.html#contactUsSec">Contact Us</a>
-              <a href="storeLocator.html">Store Locator</a>
-            </nav>
+           
             <div class="headerIconsDiv">
               <div class="loginDiv">
                 <a href="#loginFormDiv" class="loginBtn loginLink">
@@ -81,9 +57,9 @@
                 </a>
               </div>
               <div class="shoppingCartDiv">
-                <a href="#" class="shoppingCartBtn">
+                <div class="shoppingCartBtn">
                   <i class="fa-solid fa-cart-shopping"></i>
-                </a>
+                </div>
                 <span class="shoppingCartNbr">0</span>
               </div>
             </div>
@@ -99,51 +75,93 @@
           <a href="https://wa.me/71315517" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
-      <section id="contactUsSec">
-        <h1 class="pageTitle">How can we help you?</h1>
-        <div class="contactDiv">
-          <div class="contactCard">
-            <i class="fa-brands fa-whatsapp"></i>
-            <span>Whatsapp Us:</span>
-            <a href="https://wa.me/71315517" target="_blank">+961 71 315 517</a>
-          </div>
-          <div class="contactCard">
-            <i class="fa-solid fa-phone"></i>
-            <span>Call Us:</span>
-            <a href="tel: 0096171315517">+961 71 315 517</a>
-          </div>
-          <div class="contactCard">
-            <i class="fa-brands fa-instagram"></i>
-            <span>message us on instagram</span>
-            <a href="https://www.instagram.com/jouds_butter/" target="_blank">jouds_butter</a>
-          </div>
+      <section class="checkoutSec">
+        <div  class="checkoutDetailsDiv">
+            <div class="billingShippingDiv">
+                <h3>Billing & Shipping</h3>
+                <form class="checkoutForm">
+                    <div class="inputField">
+                      <input type="text" placeholder="First name" />
+                    </div>
+                    <div class="inputField">
+                        <input type="text" placeholder="Last name" />
+                    </div>
+                    <div class="inputField">
+                      <input type="email" placeholder="Your email address" />
+                    </div>
+                    <div class="inputField">                  
+                      <input type="number" placeholder="Your phone number" />
+                    </div>                
+                    <div class="inputField">                  
+                      <textarea name="address" placeholder="Address"></textarea>
+                    </div>
+                    <div class="inputField">
+                        <input type="text" placeholder="City" />
+                    </div>
+                    <div class="inputField">
+                        <input type="text" placeholder="Postal code(optional)" />
+                    </div>
+                    <label>
+                        <input type="checkbox" id="createAccountCheckbox"/>
+                        Also create an account for future use
+                      </label>
+                      <label>
+                        <input type="checkbox" id="billingDeliveryAddress" checked/>
+                        My billing and delivery addresses are the same
+                      </label>
+                  </form>
+            </div>
+            
+            <div class="deliveryDiv" id="deliveryDetailsDiv">
+                <h3>Delivery Details</h3>
+                <form class="deliveryForm" >
+                    <div class="inputField">
+                      <input type="text" placeholder="First name" />
+                    </div>
+                    <div class="inputField">
+                        <input type="text" placeholder="Last name" />
+                    </div>                
+                    <div class="inputField">                  
+                      <textarea name="address" placeholder="Address"></textarea>
+                    </div>
+                    <div class="inputField">
+                        <input type="text" placeholder="City" />
+                    </div>
+                  </form>
+            </div>
+             <div class="paymentMethod">
+                <h3>Payment Method</h3>
+                <div>
+                    <input type="radio" name="paymentMethod" value="cod" id="cod" checked>
+                    <label for="cod">
+                        <i class="fa-solid fa-money-bill"></i>
+                        <span>Cash On Delivery</span>
+                    </label>
+                </div>
+                <div>
+                    <span>Add comments about your order</span>
+                    <textarea name="comment" rows="5"></textarea>
+                </div>
+             </div>
+
         </div>
-        <div class="messageFormDiv">
-          <h3>Or kindly send us a message</h3>
-          <form class="submitMessageForm">
-            <div class="inputField">
-              <i class="fa-regular fa-circle-user"></i>
-              <input type="text" placeholder="Your name" />
-            </div>
-            <div class="inputField">
-              <i class="fa-regular fa-envelope"></i>
-              <input type="email" placeholder="Your email address" />
-            </div>
-            <div class="inputField">
-              <i class="fa-solid fa-mobile-screen-button"></i>
-              <input type="number" placeholder="Your phone number" />
-            </div>
-            <div class="inputField">
-              <i class="fa-regular fa-comment-dots"></i>
-              <textarea name="message" placeholder="write your message here"></textarea>
-            </div>
-            <div style="align-self: flex-start">
-              <button type="submit" class="addToCartBtn">Send Message</button>
-            </div>
-          </form>
+        <div class="orderSummaryDiv">
+            <h3>Order Summary</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <td class="image">Image</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot></tfoot>
+            </table>
         </div>
+        
       </section>
-      <!-- footer section -->
       <footer class="footer">
         <div class="footerLinks">
           <div class="mainMenuDiv linksSec">
@@ -186,7 +204,8 @@
           </span>
         </div>
       </footer>
-    </div>
+    </section>
+
     <!-- shopping cart section -->
     <div class="cartTab" id="cartTab">
       <div class="cartHeader">
@@ -203,6 +222,7 @@
         <button class="checkOutBtn">Check Out</button>
       </div>
     </div>
+    <!-- end shopping cart section -->
 
     <!-- login and registration form -->
     <div class="loginFormDiv" id="loginFormDiv">
@@ -212,6 +232,7 @@
       </div>
     </div>
     <!-- end login and registration form -->
+
     <script src="https://kit.fontawesome.com/e84b759868.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="main.js"></script>
   </body>

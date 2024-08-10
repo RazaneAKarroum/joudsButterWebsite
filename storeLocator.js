@@ -1,7 +1,7 @@
 //const storeName = document.getElementsByClassName("storeName");
 //const storeMap = document.getElementById("googleMapFrame");
 //const storeList = document.getElementById('storeList');
-const storesDiv = document.getElementsByClassName('locationInfo');
+const storesDiv = document.querySelector('.locationInfo');
 const mapIframe = document.getElementById('googleMapFrame');
 //const iframeWindow = storeMap.contentWindow;
 //console.log(storeMap.src);
@@ -17,16 +17,17 @@ fetch("stores.json")
 
 function createStoreList() {
     stores.forEach(store => {
-      const listItem = document.createElement('div');
+      let listItem = document.createElement('div');
+      listItem.onclick = (e) => {
+        const mapUrl = store.src;
+        mapIframe.src = mapUrl;
+      };
       listItem.innerHTML = `<i class="fa-solid fa-location-dot"></i>
       <span class="storeName" >${store.name}</span>
               <p>${store.location}</p>
-              <p>Tel: 03 383 999</p>
-              <p>opening hours: 10am - 8pm</p>`;
-      listItem.addEventListener('click', () => {
-        const mapUrl = store.src;
-        mapIframe.src = mapUrl;
-      });
+              <p>${store.tel}</p>
+              <p>${store.openingHours}</p>`;
+      
       storesDiv.appendChild(listItem);
     });
   }

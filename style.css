@@ -1480,6 +1480,17 @@ textarea::placeholder {
 
 /* end userAccount styling */
 
+/* start checkout styling */
+.checkoutSec {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 2rem 0;
+}
+/* end checkout styling */
+
 /* responsive */
 @media screen and (min-width: 469px) {
   .logoDiv {

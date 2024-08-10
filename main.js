@@ -11,6 +11,7 @@ let cartNbr = document.getElementsByClassName("shoppingCartNbr");
 let subtotalSpan = document.querySelector(".cartSubtotal");
 let productTotalPrice = document.querySelector(".totalPrice");
 let loginBtn = document.getElementsByClassName("loginLink");
+let checkout = document.querySelector(".checkOutBtn");
 let cart = [];
 // let products = [];
 let body = document.querySelector("body");
@@ -284,6 +285,11 @@ const changeQuantityCart = (product_id, type, product_weight) => {
   addCartToHTML();
   addCartToMemory();
 };
+
+//go to checkout page
+checkout.addEventListener("click", () => {
+  window.open("checkout.html");
+})
 
 const initApp = () => {
   console.log("initApp is clicked");
