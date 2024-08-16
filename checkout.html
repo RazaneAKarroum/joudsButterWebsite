@@ -75,10 +75,12 @@
           <a href="https://wa.me/71315517" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
-      <section class="checkoutSec">
+      
+      <section class="checkoutMainSec">
+      <div class="checkoutSec">
         <div  class="checkoutDetailsDiv">
-            <div class="billingShippingDiv">
-                <h3>Billing & Shipping</h3>
+            <div class="billingShippingDiv checkoutRow">
+                <h3 class="checkoutTitle">Billing & Shipping</h3>
                 <form class="checkoutForm">
                     <div class="inputField">
                       <input type="text" placeholder="First name" />
@@ -101,19 +103,21 @@
                     <div class="inputField">
                         <input type="text" placeholder="Postal code(optional)" />
                     </div>
-                    <label>
-                        <input type="checkbox" id="createAccountCheckbox"/>
-                        Also create an account for future use
-                      </label>
+                    <div class="checkboxDiv">
                       <label>
-                        <input type="checkbox" id="billingDeliveryAddress" checked/>
-                        My billing and delivery addresses are the same
-                      </label>
+                          <input type="checkbox" id="createAccountCheckbox"/>
+                          Also create an account for future use
+                        </label>
+                        <label>
+                          <input type="checkbox" id="billingDeliveryAddress" checked/>
+                          My billing and delivery addresses are the same
+                        </label>
+                    </div>
                   </form>
             </div>
             
-            <div class="deliveryDiv" id="deliveryDetailsDiv">
-                <h3>Delivery Details</h3>
+            <div class="deliveryDiv checkoutRow" id="deliveryDetailsDiv">
+                <h3 class="checkoutTitle">Delivery Details</h3>
                 <form class="deliveryForm" >
                     <div class="inputField">
                       <input type="text" placeholder="First name" />
@@ -129,8 +133,8 @@
                     </div>
                   </form>
             </div>
-             <div class="paymentMethod">
-                <h3>Payment Method</h3>
+             <div class="paymentMethod checkoutRow">
+                <h3 class="checkoutTitle">Payment Method</h3>
                 <div>
                     <input type="radio" name="paymentMethod" value="cod" id="cod" checked>
                     <label for="cod">
@@ -138,29 +142,47 @@
                         <span>Cash On Delivery</span>
                     </label>
                 </div>
-                <div>
+                <div class="commentDiv">
                     <span>Add comments about your order</span>
-                    <textarea name="comment" rows="5"></textarea>
+                    <textarea name="comment" rows="7"></textarea>
                 </div>
              </div>
 
         </div>
         <div class="orderSummaryDiv">
-            <h3>Order Summary</h3>
+            <h3 class="checkoutTitle">Order Summary</h3>
             <table>
                 <thead>
                     <tr>
-                        <td class="image">Image</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td class="imageCheckout">Image</td>
+                        <td class="nameChekout">Product</td>
+                        <td class="quantityCheckout">Quantity</td>
+                        <td class="priceCheckout">Price</td>
+                        <td class="totalItemCheckout">Total</td>
                     </tr>
                 </thead>
-                <tbody></tbody>
-                <tfoot></tfoot>
+                <tbody id="checkoutBody"></tbody>
+                <tfoot>
+                  <tr>
+                    <td class="subtotalTitle" colspan="4">Subtotal:</td>
+                    <td class="subtotalCount blackFont"></td>
+                  </tr>
+                  <tr>
+                    <td class="deliveryTotal" colspan="4">Delivery Fee:</td>
+                    <td class="deliveryFeeCount blackFont"></td>
+                  </tr>
+                  <tr>
+                    <td class="totalCartTitle blackFont" colspan="4">Total:</td>
+                    <td class="totalCartCount blackFont"></td>
+                  </tr>
+                </tfoot>
             </table>
+            <div class="confirmDiv">
+              <button class="confirmOrder" id="confirmOrder">Confirm Order</button>
+            </div>
         </div>
         
+      </div>
       </section>
       <footer class="footer">
         <div class="footerLinks">
@@ -235,5 +257,6 @@
 
     <script src="https://kit.fontawesome.com/e84b759868.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="checkout.js"></script>
   </body>
 </html>

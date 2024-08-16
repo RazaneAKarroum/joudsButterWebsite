@@ -1481,13 +1481,123 @@ textarea::placeholder {
 /* end userAccount styling */
 
 /* start checkout styling */
+.checkoutMainSec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .checkoutSec {
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: start;
   flex-wrap: wrap;
   gap: 3rem;
   padding: 2rem 0;
+}
+
+.checkoutDetailsDiv {
+  width: 100%;
+}
+
+.checkoutTitle {
+  margin-bottom: 1rem;
+}
+
+.checkoutRow {
+  margin-bottom: 2rem;
+}
+
+.checkoutForm,
+.deliveryForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.checkboxDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.commentDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.commentDiv textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--butter-color);
+  border-radius: 10px;
+}
+
+.orderSummaryDiv {
+  width: 100%;
+}
+
+.orderSummaryDiv table {
+  width: 100%;
+  background: var(--bg-color);
+  border-radius: 3px 3px 0 0;
+  border-style: hidden;
+  border-collapse: collapse;
+  box-shadow: 0 0 0 1px #e5e5e5;
+  margin-bottom: 1rem;
+  color: #777777;
+}
+
+.orderSummaryDiv table td {
+  padding: 14px 12px;
+  border: 1px solid #e5e5e5;
+  vertical-align: top;
+}
+
+.orderSummaryDiv thead td {
+  background: #f8f8f8;
+  white-space: nowrap;
+  font-weight: 600;
+  color: #777777;
+
+}
+
+.checkoutItemImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkoutItemImg img {
+  width: 50%;
+}
+
+.blackFont{
+  color:var(--primary-text-color);
+}
+
+.confirmOrder {
+  width: 100%;
+  border-radius: 3px;
+  padding: 1rem;
+  background: var(--primary-text-color);
+  color: var(--bg-color); 
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+}
+
+.confirmOrder:hover {
+  background-color: #000000b9;
 }
 /* end checkout styling */
 
@@ -1658,6 +1768,14 @@ textarea::placeholder {
   .imgContent {
     height: 30rem;
   }
+  .orderSummaryDiv {
+    width: 40%;
+  }
+
+  .checkoutDetailsDiv {
+    width: 45%;
+  }
+
 }
 
 @media screen and (min-width: 1300px) {
