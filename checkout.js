@@ -3,6 +3,15 @@ let subtotalCheckout = document.querySelector(".subtotalCount");
 let deliveryFeeSpan = document.querySelector(".deliveryFeeCount");
 let deliveryFee = 3;
 let totalCheckout = document.querySelector(".totalCartCount");
+let billingDelivery = document.querySelector("#billingDeliveryDetailsDiv");
+
+
+function showBillingDiv(sameDelivery) {
+  var sameDelivery = document.querySelector("#billingDeliveryAddress");
+  console.log(sameDelivery);
+  billingDelivery.style.display = sameDelivery.checked ? "none" : "block";
+  console.log(billingDelivery);
+}
 
 let products = null;
     // get data product

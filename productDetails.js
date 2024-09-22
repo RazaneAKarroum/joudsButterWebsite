@@ -7,14 +7,25 @@ const plus = document.querySelector(".increaseQuantity");
 const minus = document.querySelector(".decreaseQuantity");
 const number = document.querySelector(".quantityNbr");
 let productWeight = detail.querySelector(".productWeightlist");
+let productIconDiv = detail.querySelector(".iconsDiv");
 let productSubtotal = 0;
 // let similarProduct = document.getElementsByClassName("productCard");
 let listProduct = document.querySelector(".similarProductsList");
 let num = Number(number.innerHTML);
 let option = null;
 let productIndex = 0;
+let checkoutB = document.querySelector(".checkoutBtn");
 
 console.log(num);
+
+let products = null;
+// get datas from file json
+fetch("products.json")
+  .then((response) => response.json())
+  .then((data) => {
+    products = data;
+    showDetail();
+  });
 
 plus.addEventListener("click", (event) => {
   console.log(event.target);
@@ -45,14 +56,7 @@ window.addEventListener("load", () => {
 });
 // end loader
 
-let products = null;
-// get datas from file json
-fetch("products.json")
-  .then((response) => response.json())
-  .then((data) => {
-    products = data;
-    showDetail();
-  });
+
 
 // // add to cart
 // for (var i = 0; i < similarProduct.length; i++) {
@@ -87,6 +91,8 @@ function showDetail() {
   detail.querySelector(".productName").innerText = thisProduct.name;
   detail.querySelector(".productPrice").innerText = `From ${thisProduct.price}$`;
   detail.querySelector(".productDescription").innerText = thisProduct.description;
+  detail.querySelector(".ingredientsDiv").innerText = thisProduct.ingredients;
+  detail.querySelector(".nutritionFactsDiv").innerText = thisProduct.nutritionFacts;
   detail.querySelector(".pdAddToCartBtn").style.backgroundColor = `#${thisProduct.color}`;
   detail.querySelector(".subtotal").innerText = `$ ${productSubtotal}`;
 
@@ -104,6 +110,19 @@ function showDetail() {
       refreshInfo();
     };
     productWeight.appendChild(li);
+  });
+
+  //insert product icons into li tags
+  let listIcons = thisProduct.icon;
+  console.log(listIcons);
+  listIcons.forEach((icon) => {
+    console.log(icon);
+    let li = document.createElement("li");
+    li.classList.add("productIcon");
+    li.innerHTML = `
+      <img src=${icon.iconSrc}>
+      <span class="iconDescStyle">${icon.iconDesc}</span>`;
+    productIconDiv.appendChild(li);
   });
 
   //insert product weight into li tags
@@ -124,7 +143,11 @@ function showDetail() {
 
   let d = detail.querySelector(".pdAddToCartBtn");
   // let q = detail.querySelector("#productQuantity").innerText;
-  console.log(`this is the quantity: ${q}`);
+
+  if(thisProduct.availability === "out of stock"){
+    d.disabled = true;
+  } else {
+    console.log(`this is the quantity: ${q}`);
   d.onmouseover = () => {
     d.style.border = `1px solid #${thisProduct.color}`;
     d.style.color = thisProduct.color;
@@ -152,6 +175,9 @@ function showDetail() {
       addToCart(productId, q, option);
     }
   });
+  }
+
+  
 
   let filteredProducts = products
     .filter((value) => value.id != productId)
@@ -230,4 +256,26 @@ const refreshInfo = () => {
     console.log(productSubtotal);
     detail.querySelector(".subtotal").innerText = `$ ${productSubtotal}`;
   }
+};
+
+//go to checkout page
+checkoutB.addEventListener("click", () => {
+  window.open("checkout.html");
+});
+
+//accordion for description, ingredients, and nutrition facts
+const toggleInfo = (element) => {
+  const headers = document.querySelectorAll("article header");
+  for (let header of headers) {
+    header.classList.remove("active");
+    header.nextElementSibling.style.height = "0px";
+  }
+
+  element.classList.add("active");
+
+  const content = element.nextElementSibling;
+
+  const text = content.querySelector("p");
+
+  content.style.height = `${text.clientHeight}px`;
 };

@@ -81,7 +81,7 @@
                 </a>
               </div>
               <div class="shoppingCartDiv">
-                <a href="#" class="shoppingCartBtn">
+                <a class="shoppingCartBtn">
                   <i class="fa-solid fa-cart-shopping"></i>
                 </a>
                 <span class="shoppingCartNbr">0</span>
@@ -107,6 +107,8 @@
           </div>
           <div class="productDetailsContent">
             <h3 class="productName"></h3>
+            <div class="iconsDiv">
+            </div>
             <span class="productPrice"></span>
             <div class="productWeightDiv">
               <span class="weightTitle">Weight:</span>
@@ -128,13 +130,132 @@
               <button class="pdAddToCartBtn">add to cart</button>
               <button class="checkoutBtn">checkout</button>
             </div>
-            <div class="accordion">
+            <!-- <div class="accordion">
               <div class="productDescription"></div>
               <div class="productIngredients"></div>
               <div class="productBenefits"></div>
-            </div>
+            </div> -->
+
+            <!-- start accordion test for description and ingredients -->
+            <article>
+              <div>
+                <header onClick="toggleInfo(this)" class="active">
+                  <h2>Description</h2>
+                  <i class="fa-solid fa-angle-down"></i>
+                </header>
+                <div class="descriptionDiv">
+                  <p class="productDescription">
+                  </p>
+                </div>
+              </div>
+              <div>
+                <header onClick="toggleInfo(this)">
+                  <h2>Ingredients</h2>
+                  <i class="fa-solid fa-angle-down"></i>
+                </header>
+                <div>
+                  <p class="ingredientsDiv">
+                  </p>
+                </div>
+              </div>
+              <div>
+                <header onClick="toggleInfo(this)">
+                  <h2>Benefits and Nutrition Facts</h2>
+                  <i class="fa-solid fa-angle-down"></i>
+                </header>
+                <div>
+                  <p class="nutritionFactsDiv">
+                  </p>
+                </div>
+              </div>
+            </article>
+             <!-- end accordion test -->
           </div>
         </div>
+
+        <!-- start reviews section -->
+         <div class="reviewsSection">
+          <div class="ratingBox">
+            <div class="ratingHeader">
+              <div class="title">Customer Reviews</div>
+              <div class="ratingHeaderInfo">
+                <div class="infoRating">
+                  <div class="starCount">
+                    <span class="avg">4.9</span> out of 5
+                  </div>
+                  <div class="stars">
+                    <div class="avgStars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="ratingCount">
+                      Based on <span class="count">224</span> ratings
+                    </div>
+                  </div>
+                </div>
+                <div class="ratingBar">
+                  <div class="barItem">
+                    <div class="star">
+                      5 <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="progress">
+                      <div class="progressLine" style="width: 67%;"></div>
+                    </div>
+                    <div class="percent">67%</div>
+                  </div>
+  
+                    <div class="barItem">
+                      <div class="star">
+                        4 <i class="fa-solid fa-star"></i>
+                      </div>
+                      <div class="progress">
+                        <div class="progressLine" style="width: 67%;"></div>
+                      </div>
+                      <div class="percent">13%</div>
+                    </div>
+  
+                    <div class="barItem">
+                      <div class="star">
+                        3 <i class="fa-solid fa-star"></i>
+                      </div>
+                      <div class="progress">
+                        <div class="progressLine" style="width: 67%;"></div>
+                      </div>
+                      <div class="percent">12%</div>
+                    </div>
+  
+                    <div class="barItem">
+                      <div class="star">
+                        2 <i class="fa-solid fa-star"></i>
+                      </div>
+                      <div class="progress">
+                        <div class="progressLine" style="width: 67%;"></div>
+                      </div>
+                      <div class="percent">15%</div>
+                    </div>
+
+                    <div class="barItem">
+                      <div class="star">
+                        1 <i class="fa-solid fa-star"></i>
+                      </div>
+                      <div class="progress">
+                        <div class="progressLine" style="width: 67%;"></div>
+                      </div>
+                      <div class="percent">2%</div>
+                    </div>
+  
+                  </div>
+              </div>
+             
+              </div>
+            </div>
+
+          </div>
+         </div>
+         <!-- end reviews section -->
         <div class="similarProductsDiv">
           <div class="similarProductsHeader">
             <h3 class="similarProductsTitle">Similar product</h3>
@@ -197,7 +318,7 @@
         <h3>your Cart</h3>
       </div>
       <div class="listCart"></div>
-      <div class="cartSubtotalDiv">
+      <div class="subtotalDiv">
         <span>Subtotal:</span>
         <span class="cartSubtotal"></span>
       </div>
@@ -216,7 +337,9 @@
     </div>
     <!-- end login and registration form -->
     <script src="https://kit.fontawesome.com/e84b759868.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="productDetails.js"></script>
     <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="productDetails.js"></script>
+    
+    
   </body>
 </html>

@@ -5,11 +5,19 @@
     "image": "assets/peanut.png",
     "price": 3.1,
     "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric.",
+    "ingredients": "peanut",
+    "nutritionFacts": "blablaabla",
     "color": "62202d",
+    "icon": [
+      {"iconSrc": "assets/dairyFree.png", "iconDesc": "Dairy Free"},
+      {"iconSrc": "assets/sugarFree.png", "iconDesc": "Sugar Free"},
+      {"iconSrc": "assets/honey.png", "iconDesc": "Honey Sweetened"}
+    ],
     "children": [
       { "weight": 300, "price": 3.1 },
       { "weight": 600, "price": 5.3 }
-    ]
+    ],
+    "availability": "in stock"
   },
   {
     "id": 2,
@@ -17,11 +25,19 @@
     "image": "assets/peacho.png",
     "price": 3.7,
     "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric.",
+    "ingredients": "peanut and chocolate",
+    "nutritionFacts": "blablaabla",
     "color": "d49d28",
+    "icon": [
+      {"iconSrc": "assets/dairyFree.png", "iconDesc": "Dairy Free"},
+      {"iconSrc": "assets/sugarFree.png", "iconDesc": "Sugar Free"},
+      {"iconSrc": "assets/honey.png", "iconDesc": "Honey Sweetened"}
+    ],
     "children": [
       { "weight": 300, "price": 3.7 },
       { "weight": 600, "price": 8.8 }
-    ]
+    ],
+    "availability": "in stock"
   },
   {
     "id": 3,
@@ -29,8 +45,16 @@
     "image": "assets/almond2.png",
     "price": 5.3,
     "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric.",
+    "ingredients": "almond",
+    "nutritionFacts": "blablaabla",
     "color": "2b6cbf",
-    "children": [{ "weight": 300, "price": 5.3 }]
+    "icon": [
+      {"iconSrc": "assets/dairyFree.png", "iconDesc": "Dairy Free"},
+      {"iconSrc": "assets/sugarFree.png", "iconDesc": "Sugar Free"},
+      {"iconSrc": "assets/honey.png", "iconDesc": "Honey Sweetened"}
+    ],
+    "children": [{ "weight": 300, "price": 5.3 }],
+    "availability": "in stock"
   },
   {
     "id": 4,
@@ -38,11 +62,19 @@
     "image": "assets/mixNuts.png",
     "price": 3.6,
     "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric.",
+    "ingredients": "peanut, almond, cashew...",
+    "nutritionFacts": "blablaabla",
     "color": "bb5f39",
+    "icon": [
+      {"iconSrc": "assets/dairyFree.png", "iconDesc": "Dairy Free"},
+      {"iconSrc": "assets/sugarFree.png", "iconDesc": "Sugar Free"},
+      {"iconSrc": "assets/honey.png", "iconDesc": "Honey Sweetened"}
+    ],
     "children": [
       { "weight": 300, "price": 3.6 },
       { "weight": 600, "price": 10 }
-    ]
+    ],
+    "availability": "in stock"
   },
   {
     "id": 5,
@@ -50,11 +82,19 @@
     "image": "assets/stayFit.png",
     "price": 5.3,
     "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric.",
+    "ingredients": "pecan, peanut, almond",
+    "nutritionFacts": "blablaabla",
     "color": "8495e7",
+    "icon": [
+      {"iconSrc": "assets/dairyFree.png", "iconDesc": "Dairy Free"},
+      {"iconSrc": "assets/sugarFree.png", "iconDesc": "Sugar Free"},
+      {"iconSrc": "assets/honey.png", "iconDesc": "Honey Sweetened"}
+    ],
     "children": [
       { "weight": 300, "price": 5.3 },
       { "weight": 600, "price": 8.6 }
-    ]
+    ],
+    "availability": "in stock"
   },
   {
     "id": 6,
@@ -62,8 +102,16 @@
     "image": "assets/pecan.png",
     "price": 6.25,
     "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric.",
+    "ingredients": "pecan",
+    "nutritionFacts": "blablaabla",
     "color": "6fbd5f",
-    "children": [{ "weight": 250, "price": 6.25 }]
+    "icon": [
+      {"iconSrc": "assets/dairyFree.png", "iconDesc": "Dairy Free"},
+      {"iconSrc": "assets/sugarFree.png", "iconDesc": "Sugar Free"},
+      {"iconSrc": "assets/honey.png", "iconDesc": "Honey Sweetened"}
+    ],
+    "children": [{ "weight": 250, "price": 6.25 }],
+    "availability": "out of stock"
   },
   {
     "id": 7,
@@ -71,7 +119,15 @@
     "image": "assets/cashew.png",
     "price": 5.3,
     "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric.",
+    "ingredients": "cashew",
+    "nutritionFacts": "blablaabla",
     "color": "c65baa",
-    "children": [{ "weight": 300, "price": 5.3 }]
+   "icon": [
+      {"iconSrc": "assets/dairyFree.png", "iconDesc": "Dairy Free"},
+      {"iconSrc": "assets/sugarFree.png", "iconDesc": "Sugar Free"},
+      {"iconSrc": "assets/honey.png", "iconDesc": "Honey Sweetened"}
+    ],
+    "children": [{ "weight": 300, "price": 5.3 }],
+    "availability": "in stock"
   }
 ]

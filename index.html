@@ -126,7 +126,7 @@
           <h2 class="oswald-600 subtitle">best seller Products</h2>
           <div class="productsDiv">
             <div class="bestSellerProductsDiv">
-              <div class="productCard" id="productDetails.html?id=1">
+              <div class="productCard" id="productDetails.html?id=1" >
                 <img src="assets/peanut.png" />
                 <span>peanut butter</span>
                 <span>from 3.1$</span>
@@ -310,9 +310,16 @@
             <button class="btn2">read more</button>
           </div>
         </section>
+
+        <!-- insta feed gallery C_sH2kotKrN -->
         <section class="instaFeedGallerySec">
           <h2 class="subtitle">our gallery</h2>
+          <div class="instaFeedDiv">
+           
+          </div>
         </section>
+        <!-- end insta feed gallery -->
+
       </section>
       <footer class="footer">
         <div class="footerLinks">
@@ -387,5 +394,15 @@
 
     <script src="https://kit.fontawesome.com/e84b759868.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
+	  <script type="text/javascript">
+	    var userFeed = new Instafeed({
+		    get: 'user',
+		    target: "instaFeedDiv",
+    	  resolution: 'low_resolution',
+		    accessToken: 'YOUR_INSTAGRAM_ACCESS_TOKEN_GOES_HERE'
+	    });
+	    userFeed.run();
+	</script>
   </body>
 </html>

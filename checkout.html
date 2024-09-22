@@ -108,13 +108,31 @@
                           <input type="checkbox" id="createAccountCheckbox"/>
                           Also create an account for future use
                         </label>
-                        <label>
-                          <input type="checkbox" id="billingDeliveryAddress" checked/>
+                        <label for="billingDeliveryAddress">
+                          <input type="checkbox" id="billingDeliveryAddress" onclick="showBillingDiv(this)" checked/>
                           My billing and delivery addresses are the same
                         </label>
                     </div>
                   </form>
             </div>
+
+            <div class="deliveryDiv checkoutRow" id="billingDeliveryDetailsDiv">
+              <h3 class="checkoutTitle">Billing Details</h3>
+              <form class="deliveryForm" >
+                  <div class="inputField">
+                    <input type="text" placeholder="First name" />
+                  </div>
+                  <div class="inputField">
+                      <input type="text" placeholder="Last name" />
+                  </div>                
+                  <div class="inputField">                  
+                    <textarea name="address" placeholder="Address"></textarea>
+                  </div>
+                  <div class="inputField">
+                      <input type="text" placeholder="City" />
+                  </div>
+                </form>
+          </div>
             
             <div class="deliveryDiv checkoutRow" id="deliveryDetailsDiv">
                 <h3 class="checkoutTitle">Delivery Details</h3>

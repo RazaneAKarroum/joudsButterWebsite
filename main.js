@@ -126,12 +126,23 @@ for (var i = 0; i < bestSellerProduct.length; i++) {
   var bestSellerProductClicked = bestSellerProduct[i];
   bestSellerProductClicked.addEventListener("click", (e) => {
     console.log(e);
+    let bestSellerId = e.target.dataset.id;
+    
+    let productWeight = e.target.dataset.weight;
+    
+
     let isAddToCart = e.target.classList.contains("addToCartBtn");
+    // let isImgClicked = e.currentTarget;
     if (!isAddToCart) {
-      window.open(`/${e.target.id}`);
+      console.log(bestSellerId);
+      console.log(productWeight);
+      window.open(`/${e.currentTarget.id}`);
+      // window.open(`/productDetails.html?id=${bestSellerId}`);
     } else {
-      let bestSellerId = e.target.dataset.id;
-      let productWeight = e.target.dataset.weight;
+      console.log(bestSellerId);
+      console.log(productWeight);
+      // let bestSellerId = e.target.dataset.id;
+      // let productWeight = e.target.dataset.weight;
       addToCart(bestSellerId, 1, productWeight);
     }
   });
@@ -184,7 +195,11 @@ function addToCart(product_id, itemQuantity, itemWeight) {
 const addCartToMemory = () => {
   localStorage.setItem("cart", JSON.stringify(cart));
 };
-const addCartToHTML = () => {
+
+function addCartToHTML() {
+
+
+//const addCartToHTML = () => {
   // console.log(`addToCart function is entered and this is the index: ${index}`);
   listCartHTML.innerHTML = "";
   let totalQuantity = 0; //this is the total quantity of items in cart to be displayed in shopping cart icon
@@ -242,7 +257,7 @@ const addCartToHTML = () => {
   for (i = 0; i < cartNbr.length; i++) {
     cartNbr[i].innerText = totalQuantity;
   }
-};
+}
 
 listCartHTML.addEventListener("click", (event) => {
   let positionClick = event.target;

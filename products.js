@@ -41,6 +41,12 @@ function addDataToProducts() {
                 <span>${product.name}</span>
                 <span class="price">from $ ${product.price}</span>
                 <button class="addToCartBtn">add to cart</button>`;
+
+      if(product.availability === "out of stock"){
+        console.log(`${product.name} is out of stock`);
+        newProduct.innerHTML += `
+                <div class="outOfStockBanner"><span>Out Of Stock</span></div>`
+      }          
       listProductHTML.appendChild(newProduct);
     });
   }
